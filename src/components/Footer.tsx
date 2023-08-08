@@ -16,7 +16,7 @@ export const Footer = () => {
           <li className={"social discord"}><a href={"https://discord.gg/noriskclient"}><DiscordIcon size={24}/></a></li>
           <li className={"social youtube"}><a href={"https://youtube.com/@noriskk"}><YouTubeIcon size={24}/></a></li>
           <li className={"social twitch"}><a href={"https://twitch.tv/norisk"}><TwitchIcon size={24}/></a></li>
-          <li className={"social twitter"}><a href={"https://discord.gg/noriskclient"}><TwitterIcon size={24}/></a></li>
+          <li className={"social twitter"}><a href={"https://x.com/noriskclient"}><TwitterIcon size={24}/></a></li>
         </ul>
       </div>
       <div className={"footer-bottom"}>
