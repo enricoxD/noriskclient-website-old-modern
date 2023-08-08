@@ -1,0 +1,223 @@
+.navbar {
+  position: fixed;
+  height: 80px !important;
+  width: 100vw !important;
+  z-index: 5000;
+  padding: 0 1rem;
+
+  .container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    gap: 2rem;
+
+    .navbar-brand, .navbar-start, .navbar-end {
+      display: flex;
+      align-items: center;
+      flex: 1 1 0;
+      height: 100%;
+    }
+
+    .navbar-brand {
+      flex: unset;
+      justify-content: space-between;
+
+      .navbar-burger {
+        display: none;
+      }
+    }
+
+    .navbar-end {
+      justify-content: flex-end;
+      gap: 0.75rem;
+    }
+  }
+}
+
+.navbar-link, .navbar-dropdown {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0) 50%, $surface-variant 50%);
+  background-size: 100% 200%;
+  box-shadow: 0 2px 0 0 transparent;
+  transition: transform 0.35s ease-in-out, background 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+
+  @include tablet {
+    &:hover {
+      background-position: 100% 100%;
+      box-shadow: 0 2px 0 0 $primary;
+    }
+  }
+}
+
+.navbar-link {
+  padding-inline: 1.5rem;
+}
+
+.navbar-dropdown {
+  position: relative;
+  display: unset;
+
+  .dropdown-box {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    // styling
+    margin-top: 3px;
+    min-width: 10rem;
+    background: $surface;
+    border-radius: 6px;
+    border: 1px solid $outline;
+    opacity: 0;
+    box-shadow: -2px 3px 2px 0 rgba(0, 0, 0, 0.33);
+    overflow: hidden;
+
+    // animation
+    transform: scaleY(0);
+    transform-origin: center top;
+    transition: all 0.35s ease-in-out;
+
+    * {
+      transition: all 0.35s ease-in-out;
+      padding-block: 0.75rem;
+      padding-inline: 1rem;
+
+      &:hover {
+        background: $surface-variant;
+        box-shadow: none;
+      }
+    }
+  }
+
+  @include tablet {
+    &:hover {
+      .dropdown-box {
+        transform: scaleY(1);
+        opacity: 1;
+      }
+
+      .navbar-link {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .navbar {
+    .container {
+      flex-direction: column;
+      gap: 0;
+
+      .navbar-brand {
+        min-height: 80px !important;
+        width: 100%;
+        align-items: center;
+        z-index: 5;
+        padding: 0 1rem;
+        transition: box-shadow 0.35s ease-in-out;
+        background: $surface;
+
+        .navbar-burger {
+          display: inherit;
+          position: relative;
+          height: 60px;
+          width: 60px;
+          z-index: 1000;
+          cursor: pointer;
+
+          span {
+            position: absolute;
+            left: 25%;
+            top: 50%;
+            width: 32px;
+            height: 3px;
+            background-color: $outline;
+            transition: all 300ms cubic-bezier(.84, .06, .52, 1.8);
+          }
+
+          :first-child {
+            transform: translateY(-8px);
+            animation-delay: 100ms;
+          }
+
+          :last-child {
+            transform: translateY(8px);
+            animation-delay: 250ms;
+          }
+
+          &.is-active {
+            :first-child {
+              transform: rotate(40deg);
+            }
+
+            :last-child {
+              transform: rotate(-40deg);
+            }
+
+            :nth-child(2) {
+              opacity: 0;
+            }
+          }
+        }
+      }
+
+      .navbar-start, .navbar-end {
+        width: 100%;
+        z-index: 4;
+        height: auto;
+        background: $surface-variant;
+        opacity: 0;
+        transform: translateY(-150px);
+        transition: all 0.4s ease-in-out;
+      }
+
+      .navbar-start {
+        flex-direction: column;
+      }
+
+      .navbar-end {
+        flex-direction: column;
+        padding-top: 0.5rem;
+        padding-bottom: 1rem;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        box-shadow: -2px 3px 2px 0 rgba(0, 0, 0, 0.33);
+
+        * {
+          width: 50%;
+        }
+      }
+    }
+
+    .navbar-link, .navbar-dropdown {
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+
+      .chevron-icon {
+        display: none;
+      }
+    }
+
+    .navbar-link {
+      padding: 1rem;
+    }
+
+    &.is-active {
+      .navbar-brand {
+        box-shadow: 0 2px 0 0 $primary;
+        z-index: 5;
+      }
+
+      .navbar-start, .navbar-end {
+        z-index: 4;
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+}
+

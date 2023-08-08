@@ -1,0 +1,66 @@
+.button {
+  cursor: pointer;
+  display: flex;
+  outline: 0;
+  color: $font-color;
+  background-color: $component-background;
+  font-weight: 400;
+  line-height: 1.5;
+  border: 1px solid transparent;
+  padding: 8px 16px;
+  font-size: 16px;
+  border-radius: 0.25rem;
+  transition: all 0.35s ease-in-out;
+  align-items: center;
+
+  p {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .icon {
+      margin-right: 0.33rem;
+    }
+  }
+
+  &:hover {
+    background-color: bulmaDarken($component-background, 10%);
+  }
+
+  &.is-beige {
+    background-color: $beige;
+
+    &:hover {
+      background-color: bulmaDarken($beige, 5%);
+    }
+
+    * {
+      color: $outline;
+    }
+  }
+
+  &.is-warning {
+    background-color: $danger;
+
+    &:hover {
+      background-color: bulmaDarken($danger, 10%);
+    }
+  }
+
+  &.is-surface {
+    background-color: $surface;
+
+    &:hover {
+      background-color: $surface-variant;
+    }
+  }
+
+  &.is-light {
+    background-color: $outline;
+
+    &:hover {
+      background-color: bulmaDarken($outline, 10%);
+    }
+  }
+}

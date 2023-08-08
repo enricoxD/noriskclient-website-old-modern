@@ -1,0 +1,11 @@
+.textmedia {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 3rem;
+
+  @include touch {
+    gap: 4rem;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,43 @@
+.accordion-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .accordion {
+    overflow: hidden;
+    border-bottom: 1px solid $outline;
+
+    &:first-of-type {
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+
+    }
+
+    &:last-of-type {
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      border-bottom: 0;
+    }
+  }
+}
+
+.accordion {
+  .accordion-header {
+    padding: 1rem 1.25rem;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .accordion-content-wrapper {
+    .accordion-content {
+      background: bulmaLighten($surface-variant, 3%);
+      padding: 1rem 1.25rem;
+
+      * {
+        letter-spacing: 0.1px;
+      }
+    }
+  }
+}

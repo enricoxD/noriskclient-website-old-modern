@@ -1,0 +1,51 @@
+.support-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+
+  .support-button-wrapper {
+    display: flex;
+    gap: 1rem;
+    flex: 1 1 0;
+
+    &:nth-child(1) {
+      justify-content: flex-end;
+    }
+
+    &:nth-child(2) {
+      justify-content: flex-start;
+    }
+
+    .support-button {
+      display: flex;
+      gap: 1rem;
+      border-radius: 0.25rem;
+      padding: 0.75rem 1rem;
+      align-items: center;
+      transition: all 0.35s ease-in-out;
+      box-shadow: -3px 3px 5px 0 rgba(0, 0, 0, 0.55);
+
+      .service-name {
+        font-size: 1.25rem;
+      }
+
+      &.discord {
+        background: #7289d9;
+
+        &:hover {
+          scale: 1.05;
+          background: bulmaDarken(#7289d9, 5%);
+        }
+      }
+
+      &.github {
+        background: #0D0D0D;
+
+        &:hover {
+          scale: 1.05;
+          background: bulmaLighten(#0D0D0D, 5%);
+        }
+      }
+    }
+  }
+}
