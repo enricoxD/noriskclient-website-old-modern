@@ -13,12 +13,7 @@ interface ModuleGridColumnType {
   index: number
 }
 
-const ModuleGridColumn = ({label, icon, image, index}: {
-  label: string,
-  icon?: string,
-  image?: string,
-  index: number,
-}) => {
+const ModuleGridColumn = ({label, icon, image, index}: ModuleGridColumnType) => {
   const [isEnabled, setEnabled] = useState(false)
   const isMobile = useMediaQuery("(max-width: 768px)")
 
@@ -43,7 +38,7 @@ const ModuleGridColumn = ({label, icon, image, index}: {
         transition={{
           ease: "easeInOut",
           duration: 0.4,
-          delay: isMobile ? 0.2 * (index % 2 + 1) : 0.2 * index,
+          delay: isMobile ? 0.2 * (index % 2 + 1) : 0.2 * (index % 3 + 1),
           scale: {
             duration: 0.3
           }
