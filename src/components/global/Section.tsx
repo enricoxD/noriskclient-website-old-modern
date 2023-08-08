@@ -7,10 +7,11 @@ interface SectionProps extends ComponentProps<"section"> {
   disableContainer?: boolean;
   backgroundColor?: 'default' | 'variant' | 'beige' | 'footer';
   divider?: boolean;
+  innerClassName?: string;
   children: React.ReactNode;
 }
 
-export default function Section({headline, subline, disableContainer, backgroundColor, divider, children, className, id}: SectionProps) {
+export default function Section({headline, subline, disableContainer, backgroundColor, divider, children, className, innerClassName, id}: SectionProps) {
   return (
     <div className={`${backgroundColor ? `background-${backgroundColor}` : ""}`}>
       <section id={id} className={`section ${disableContainer ? "" : "container"} ${divider ? "divider" : ""} ${className ? className : ""}`}>
@@ -18,7 +19,9 @@ export default function Section({headline, subline, disableContainer, background
           {headline && <h2 className={"section-headline"}>{headline}</h2>}
           {subline && <p className={"section-subline"}>{subline}</p>}
         </Animation>
-        {children}
+        <div className={innerClassName}>
+          {children}
+        </div>
       </section>
     </div>
   )

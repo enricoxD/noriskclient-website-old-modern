@@ -25,7 +25,7 @@ export const FAQSection = ({accordions}: { accordions: AccordionProps[] }) => {
   };
 
   return (
-    <Section className={"faqsection"}>
+    <Section innerClassName={"faqsection"}>
       <Textfield icon={mdiMagnify} placeholder={"Find your answers!"} onChange={handleChange}/>
       { filteredAccordions.length > 0 ?
         <AccordionList accordions={filteredAccordions} />
