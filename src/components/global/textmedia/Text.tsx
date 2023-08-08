@@ -1,5 +1,4 @@
 import {Button} from "@/components/global/Button";
-import {SupportButtons} from "@/components/global/SupportButtons";
 
 export interface TextProps {
   title?: string;
