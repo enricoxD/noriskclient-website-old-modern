@@ -30,13 +30,12 @@ export default function Page() {
   return (
     <main>
       <HeroSection landingpage>
-        <Text
+        <TextMedia
           title={"NoRisk Client"}
           titleClassName={"huge-text gradient-text"}
           text={"Community-oriented Minecraft Modpack Client providing unique cosmetics and features."}
-          // text={"Completely free Minecraft PvP Client providing unique cosmetics and features."}
-          // mediaType={"video"}
-          // videoId={"xrZ3HM2Xv6Q"}
+          mediaType={"video"}
+          videoId={"xrZ3HM2Xv6Q"}
           buttonHref={"/download"}
           buttonIcon={mdiDownload}
           buttonLabel={"Download"}
