@@ -5,6 +5,7 @@ import {IconGrid, IconGridEntryProps} from "@/components/global/IconGrid";
 import {mdiBug, mdiDownload, mdiHelp, mdiLightbulb} from "@mdi/js";
 import {TextMedia} from "@/components/global/textmedia/TextMedia";
 import {SupportButtons} from "@/components/global/SupportButtons";
+import {Text} from "@/components/global/textmedia/Text";
 
 export default function Page() {
 
@@ -29,13 +30,13 @@ export default function Page() {
   return (
     <main>
       <HeroSection landingpage>
-        <TextMedia
+        <Text
           title={"NoRisk Client"}
           titleClassName={"huge-text gradient-text"}
           text={"Community-oriented Minecraft Modpack Client providing unique cosmetics and features."}
           // text={"Completely free Minecraft PvP Client providing unique cosmetics and features."}
-          mediaType={"video"}
-          videoId={"xrZ3HM2Xv6Q"}
+          // mediaType={"video"}
+          // videoId={"xrZ3HM2Xv6Q"}
           buttonHref={"/download"}
           buttonIcon={mdiDownload}
           buttonLabel={"Download"}
