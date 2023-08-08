@@ -24,7 +24,7 @@ export const Footer = () => {
         <ul className={"links"}>
           <li><a href={"/store"}>Store</a></li>
           <li><a href={"/faq"}>FAQ</a></li>
-          <li><a href={"/tos"}>Terms of Service</a></li>
+          <li><a href={"/tos"}>Terms</a></li>
           <li><a href={"/privacy"}>Privacy Policy</a></li>
         </ul>
         <p>Not affiliated with Mojang Studios</p>
