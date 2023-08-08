@@ -85,6 +85,8 @@ a {
   color: transparent;
   background-size: 500% auto;
   animation: textgradient 5s ease-in-out infinite alternate;
+  -webkit-animation: textgradient 5s ease-in-out infinite alternate;
+  -moz-animation: textgradient 5s ease-in-out infinite alternate;
 }
 
 @keyframes textgradient {
