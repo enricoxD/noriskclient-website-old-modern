@@ -21,7 +21,7 @@ export const YouTubePlayer = ({id}: { id: string }) => {
           />
           :
           <div className="youtube-thumbnail" onClick={playVideo}>
-            <Image src={`https://img.youtube.com/vi/${id}/maxresdefault.jpg`} alt={"YouTube Video"} fill/>
+            <Image src={`https://img.youtube.com/vi/${id}/maxresdefault.jpg`} alt={"YouTube Video"} fill priority />
             <div className="play-button-overlay"></div>
           </div>
       }
