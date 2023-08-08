@@ -1,0 +1,12 @@
+.faqsection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: center;
+
+  @include desktop {
+    .textfield {
+      width: 75%;
+    }
+  }
+}

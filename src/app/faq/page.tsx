@@ -5,6 +5,8 @@ import {AccordionList} from "@/components/global/AccordionList";
 import Section from "@/components/global/Section";
 import {SupportButtons} from "@/components/global/SupportButtons";
 import {useState} from "react";
+import {Textfield} from "@/components/global/Textfield";
+import {mdiMagnify} from "@mdi/js";
 
 const accordions = [
   {
@@ -49,44 +51,45 @@ const accordions = [
   },
 ]
 
-export default function FAQ() {
-  const [message, setMessage] = useState('');
+const FAQSection = () => {
+  const [searchQuery, setSearchQuery] = useState('');
   const [filteredAccordions, setFilteredAccordions] = useState(accordions)
 
   const handleChange = (event: any) => {
-    setMessage(event.target.value);
+    const inputValue = event.target.value
+    setSearchQuery(inputValue);setSearchQuery(event.target.value)
+
     if (event.target.value.length == 0) {
       setFilteredAccordions(accordions)
       return
     }
 
     const filtered = accordions.filter((accordion) => {
-      return accordion.label.toLowerCase().includes(message.toLowerCase()) || accordion.content.toLowerCase().includes(message.toLowerCase())
+      return accordion.label.toLowerCase().includes(inputValue.toLowerCase()) || accordion.content.toLowerCase().includes(inputValue.toLowerCase())
     })
     setFilteredAccordions(filtered)
-
-    console.log('value is:', event.target.value);
   };
 
+  return (
+    <Section className={"faqsection"}>
+      <Textfield icon={mdiMagnify} placeholder={"Find your answers!"} onChange={handleChange}/>
+      { filteredAccordions.length > 0 ?
+        <AccordionList accordions={filteredAccordions} />
+        :
+        <p>There are no questions matching your query! :(</p>
+      }
+    </Section>
+  )
+}
+
+export default function FAQ() {
   return (
     <>
       <HeroSection>
         <Text title={"Frequently Asked Questions"}
               text={"Curious Minds, Meet Solutions.<br/>Require Further Assistance?<br/>Contact Us via the Listed Platforms."}/>
       </HeroSection>
-      <Section>
-        <input
-          type="text"
-          id="message"
-          name="message"
-          onChange={handleChange}
-          value={message}
-          style={{
-            color: "red"
-          }}
-        />
-        <AccordionList accordions={filteredAccordions} />
-      </Section>
+      <FAQSection />
       <SupportButtons headline={"Your questions haven't been answered?"} />
     </>
   )
