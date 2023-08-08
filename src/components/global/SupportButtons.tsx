@@ -16,7 +16,7 @@ export const SupportButtons = ({headline}: { headline?: string }) => {
     const shownName = service == "discord" ? "Discord" : "GitHub"
 
     return (
-      <motion.a
+      <motion.div
         className={`support-button-wrapper`}
         initial="hidden"
         whileInView="visible"
@@ -26,13 +26,12 @@ export const SupportButtons = ({headline}: { headline?: string }) => {
         }}
         transition={{duration: 0.35}}
         variants={variants}
-        href={href}
       >
-        <div className={`support-button ${service}`}>
+        <a className={`support-button ${service}`} href={href}>
           {children}
           <p className={"service-name"}>{shownName}</p>
-        </div>
-      </motion.a>
+        </a>
+      </motion.div>
     )
   }
 

@@ -48,4 +48,23 @@
       }
     }
   }
+
+  @include mobile {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+
+    .support-button-wrapper {
+      justify-content: center;
+      align-items: center;
+      width: 75vw;
+
+      .support-button {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
 }
