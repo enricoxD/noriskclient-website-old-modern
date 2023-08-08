@@ -12,7 +12,7 @@ export const slideInLeft = {
     opacity: 1
   },
   hidden: {
-    x: -150,
+    x: -100,
     opacity: 0
   }
 }
@@ -23,7 +23,7 @@ export const slideInRight = {
     opacity: 1
   },
   hidden: {
-    x: 150,
+    x: 100,
     opacity: 0
   }
 }
@@ -34,7 +34,7 @@ const slideInBottom = {
     opacity: 1
   },
   hidden: {
-    y: 150,
+    y: 100,
     opacity: 0
   }
 }
