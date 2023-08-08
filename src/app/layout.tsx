@@ -2,6 +2,7 @@ import {NavBar} from "@/components/NavBar";
 import "@/styles/styles.scss"
 import {Footer} from "@/components/Footer";
 import React from "react";
+import {CookieConsent} from "@/components/CookieConsent";
 
 export const metadata = {
   title: 'NoRisk Client',
@@ -16,6 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={"layout"}>
+        <CookieConsent />
         <NavBar />
         <div className={"main-content"}>
             {children}
