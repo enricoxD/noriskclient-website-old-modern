@@ -1,5 +1,5 @@
 "use client"
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Image from "next/image";
 import {Button} from "@/components/global/Button";
 import {useCookies} from "react-cookie";
@@ -8,11 +8,16 @@ import {CookieConsentState} from "@/components/CookieConsent";
 export const YouTubePlayer = ({id}: { id: string }) => {
   const [showVideo, setShowVideo] = useState(false)
   const [cookieConsent, setCookieConsent] = useCookies(["cookieConsent"])
-  const allowsExternalMedia = cookieConsent.cookieConsent == CookieConsentState.ALL
+  const [allowExternalMedia, setAllowExternalMedia] = useState(false)
 
   const giveCookieConsent = () => {
     setCookieConsent("cookieConsent", CookieConsentState.ALL, {path: "/"})
   }
+
+  useEffect(() => {
+    const allowsExternalMedia = cookieConsent.cookieConsent == CookieConsentState.ALL;
+    setAllowExternalMedia(allowsExternalMedia);
+  }, [])
 
   const playVideo = () => {
     setShowVideo(true);
@@ -54,7 +59,7 @@ export const YouTubePlayer = ({id}: { id: string }) => {
 
   return (
     <div className="youtube-player">
-      {allowsExternalMedia ? <VideoJsx /> : <CookieWarningJsx />}
+      {allowExternalMedia ? <VideoJsx /> : <CookieWarningJsx />}
     </div>
   );
 }
