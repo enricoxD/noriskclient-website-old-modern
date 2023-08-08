@@ -165,13 +165,14 @@
       }
 
       .navbar-start, .navbar-end {
+        visibility: hidden;
         width: 100%;
         z-index: 4;
         height: auto;
         background: $surface-variant;
         opacity: 0;
         transform: translateY(-150px);
-        transition: all 0.4s ease-in-out;
+        transition: all 0.3s ease-in-out;
       }
 
       .navbar-start {
@@ -207,15 +208,18 @@
     }
 
     &.is-active {
-      .navbar-brand {
-        box-shadow: 0 2px 0 0 $primary;
-        z-index: 5;
-      }
+      .container {
+        .navbar-brand {
+          box-shadow: 0 2px 0 0 $primary;
+          z-index: 5;
+        }
 
-      .navbar-start, .navbar-end {
-        z-index: 4;
-        opacity: 1;
-        transform: translateY(0);
+        .navbar-start, .navbar-end {
+          visibility: visible;
+          z-index: 4;
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
     }
   }
