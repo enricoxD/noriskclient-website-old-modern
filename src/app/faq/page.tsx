@@ -1,14 +1,9 @@
-"use client"
 import HeroSection from "@/components/HeroSection";
 import {Text} from "@/components/global/textmedia/Text";
-import {AccordionList} from "@/components/global/AccordionList";
-import Section from "@/components/global/Section";
 import {SupportButtons} from "@/components/global/SupportButtons";
-import {useState} from "react";
-import {Textfield} from "@/components/global/Textfield";
-import {mdiMagnify} from "@mdi/js";
+import {FAQSection} from "@/components/page/faq/FAQSection";
 
-const accordions = [
+const questions = [
   {
     label: "What is NoRisk Client",
     content: "NoRisk Client is a community-orientated Minecraft Client with unique features and cosmetics."
@@ -51,37 +46,6 @@ const accordions = [
   },
 ]
 
-const FAQSection = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [filteredAccordions, setFilteredAccordions] = useState(accordions)
-
-  const handleChange = (event: any) => {
-    const inputValue = event.target.value
-    setSearchQuery(inputValue);setSearchQuery(event.target.value)
-
-    if (event.target.value.length == 0) {
-      setFilteredAccordions(accordions)
-      return
-    }
-
-    const filtered = accordions.filter((accordion) => {
-      return accordion.label.toLowerCase().includes(inputValue.toLowerCase()) || accordion.content.toLowerCase().includes(inputValue.toLowerCase())
-    })
-    setFilteredAccordions(filtered)
-  };
-
-  return (
-    <Section className={"faqsection"}>
-      <Textfield icon={mdiMagnify} placeholder={"Find your answers!"} onChange={handleChange}/>
-      { filteredAccordions.length > 0 ?
-        <AccordionList accordions={filteredAccordions} />
-        :
-        <p>There are no questions matching your query! :(</p>
-      }
-    </Section>
-  )
-}
-
 export default function FAQ() {
   return (
     <>
@@ -89,7 +53,7 @@ export default function FAQ() {
         <Text title={"Frequently Asked Questions"}
               text={"Curious Minds, Meet Solutions.<br/>Require Further Assistance?<br/>Contact Us via the Listed Platforms."}/>
       </HeroSection>
-      <FAQSection />
+      <FAQSection accordions={questions}/>
       <SupportButtons headline={"Your questions haven't been answered?"} />
     </>
   )

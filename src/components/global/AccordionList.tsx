@@ -2,7 +2,7 @@
 import {Dispatch, ReactNode, SetStateAction, useEffect, useState} from "react";
 import {AnimatePresence, motion} from "framer-motion";
 
-interface AccordionProps {
+export interface AccordionProps {
   label: string;
   content: string;
 }
