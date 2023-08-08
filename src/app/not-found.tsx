@@ -1,13 +1,21 @@
 import {Button} from "@/components/global/Button";
+import HeroSection from "@/components/HeroSection";
+import {Text} from "@/components/global/textmedia/Text";
+import {mdiHome} from "@mdi/js";
 
 export default function NotFoundPage() {
   return (
-    <section className={"hero-section section is-flex-column"}>
-      <h1 className={"title error-text"}>This page cannot be found...</h1>
-      <h2 className={"subtitle"} style={{marginBottom: "15rem"}}>Error 404</h2>
-      <Button href={"/"}>
-        <p>Go back</p>
-      </Button>
-    </section>
+    <>
+      <HeroSection>
+        <Text
+          title={"Error 404"}
+          text={"This page could not be found."}
+          buttonIcon={mdiHome}
+          buttonLabel={"Go Back"}
+          buttonHref={"/"}
+          titleClassName={"is-warning"}
+        />
+      </HeroSection>
+    </>
   )
 }

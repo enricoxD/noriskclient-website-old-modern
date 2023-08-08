@@ -73,6 +73,10 @@ a {
   }
 }
 
+.is-warning {
+  color: $danger;
+}
+
 .gradient-text {
   background: $primary-gradient;
   -webkit-background-clip: text;
