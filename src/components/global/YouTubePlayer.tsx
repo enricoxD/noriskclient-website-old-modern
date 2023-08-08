@@ -17,7 +17,7 @@ export const YouTubePlayer = ({id}: { id: string }) => {
   useEffect(() => {
     const allowsExternalMedia = cookieConsent.cookieConsent == CookieConsentState.ALL;
     setAllowExternalMedia(allowsExternalMedia);
-  }, [])
+  }, [cookieConsent])
 
   const playVideo = () => {
     setShowVideo(true);
