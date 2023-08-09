@@ -1,3 +1,21 @@
+@mixin active-os {
+  background: $background-variant;
+  scale: 1.25;
+  transform: translateY(-2.5%);
+  border-radius: 1rem;
+  box-shadow: $component-background 0 0 12px 0; // glow
+
+  @include touch {
+    scale: 1.025;
+  }
+
+  .content-wrapper {
+    .os-name {
+      color: $primary;
+    }
+  }
+}
+
 .os-selection {
   display: flex;
   justify-content: center;
@@ -96,26 +114,27 @@
           margin-top: auto;
           font-size: 0.75rem;
           text-transform: uppercase;
+          text-align: center;
+        }
+      }
+
+      @include touch {
+        .image-wrapper {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          filter: saturate(0.8) grayscale(0.2);
+        }
+
+        .content-wrapper {
+          background: rgba(bulmaDarken($surface, 8%), 0.3);
         }
       }
 
       &.active {
-        background: $background-variant;
-        z-index: 100;
-        scale: 1.25;
-        transform: translateY(-2.5%);
-        border-radius: 1rem;
-        box-shadow: $component-background 0 0 12px 0; // glow
-
-        @include touch {
-          scale: 1.025;
-        }
-
-        .content-wrapper {
-          .os-name {
-            color: $primary;
-          }
-        }
+        @include active-os;
       }
 
       &:not(&.active) {
@@ -128,6 +147,15 @@
     &.active {
       z-index: 5;
       opacity: 1;
+    }
+  }
+
+  &.loading {
+    .os-wrapper:nth-child(2) {
+      z-index: 1000;
+      .os {
+        @include active-os;
+      }
     }
   }
 }

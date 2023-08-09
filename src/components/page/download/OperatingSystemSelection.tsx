@@ -1,44 +1,17 @@
 "use client"
 import {Dispatch, SetStateAction, useEffect, useRef, useState} from "react";
-import Icon from "@mdi/react";
-import Image from "next/image";
 import {useMediaQuery} from "usehooks-ts";
 import {Os} from "@/components/page/download/DownloadSection";
 import {mdiApple, mdiLinux, mdiMicrosoftWindows} from "@mdi/js";
-import {motion} from "framer-motion"
-
-const OperatingSystem = ({os, icon, subtitle, index, currentOs, handleClick}: {
-  os: Os,
-  hostOs: Os,
-  icon: string,
-  subtitle: string,
-  index: number,
-  currentOs: Os,
-  handleClick: (os: Os) => void
-}) => {
-  return (
-    <div className={`os-wrapper ${os == currentOs ? "active" : ""}`} onClick={() => handleClick(os)}>
-      <div className={`os ${os == currentOs ? "active" : ""}`}>
-        <div className={"image-wrapper"}>
-          <Image src={`/test-${os.toLowerCase()}.webp`} alt={"test"} fill/>
-        </div>
-        <div className={"content-wrapper"}>
-          <Icon className={"icon"} path={icon} size={6}/>
-          <p className={"os-name"}>{os}</p>
-          <p className={"subtitle"}>{subtitle}</p>
-        </div>
-      </div>
-    </div>
-  )
-}
+import {OperatingSystemCard} from "@/components/page/download/OperatingSystemCard";
 
 interface OperatingSystemSelectionProps {
-  hostOs: Os;
-  currentOs: Os;
+  currentOs: Os | null;
   setCurrentOs: Dispatch<SetStateAction<Os | null>>;
 }
 
-export const OperatingSystemSelection = ({hostOs, currentOs, setCurrentOs}: OperatingSystemSelectionProps) => {
+export const OperatingSystemSelection = ({currentOs, setCurrentOs}: OperatingSystemSelectionProps) => {
+  const [hostOs, setHostOs] = useState<Os | null>(null)
   const sectionRef = useRef<HTMLDivElement | null>(null)
   const isMobile = useMediaQuery("(max-width: 768px)")
 
@@ -67,7 +40,9 @@ export const OperatingSystemSelection = ({hostOs, currentOs, setCurrentOs}: Oper
     sectionRef?.current?.scrollIntoView()
   }
 
+  // rearrange the order of the operating systems
   useEffect(() => {
+    if (!hostOs) return
     const rearrangedOperatingSystems = operatingSystems.slice()
     const hostOsIndex = rearrangedOperatingSystems.findIndex(os => os.os === hostOs)
     if (hostOsIndex !== -1) {
@@ -75,16 +50,38 @@ export const OperatingSystemSelection = ({hostOs, currentOs, setCurrentOs}: Oper
       rearrangedOperatingSystems.splice(1, 0, hostOsItem)
     }
     setOrderedOperatingSystems(rearrangedOperatingSystems)
-  })
+  }, [hostOs])
+
+  // detect the users operating system
+  useEffect(() => {
+    detectOS()
+      .then((os) => {
+        console.log("Detected ", os)
+        setHostOs(os);
+        setCurrentOs(os);
+      })
+  }, []);
+
+  async function detectOS() {
+    console.log("window ", typeof window)
+    if (typeof window == "object") {
+      console.log("hasdad")
+      /*const platform = navigator.platform;
+      if (platform.indexOf('Win') !== -1) return Os.WINDOWS;
+      if (platform.indexOf('Mac') !== -1) return Os.MAC;
+      if (platform.indexOf('Linux') !== -1) return Os.LINUX;*/
+      return Os.LINUX
+    }
+    return Os.MAC;
+  }
 
   return (
-    <div ref={sectionRef} className="os-selection">
+    <div ref={sectionRef} className={`os-selection ${!hostOs ? "loading" : ""}`}>
       {
         orderedOperatingSystems.map(({os, icon, subtitle}, index) => {
           return (
-            <OperatingSystem
+            <OperatingSystemCard
               os={os}
-              hostOs={hostOs}
               icon={icon}
               subtitle={subtitle}
               currentOs={currentOs}
