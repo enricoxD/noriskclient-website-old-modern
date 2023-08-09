@@ -130,18 +130,18 @@ export const ModuleGrid = () => {
     <div className={"module-grid"}>
       <div className={"grid-head"}>
         <Image className={"logo"} src={"/logo.svg"} alt={"NoRisk Client Logo"} height={64} width={64}/>
-        <a
+        <p
           className={`${currentTab == Tab.FEATURES ? "is-active" : ""}`}
           onClick={() => selectTab(Tab.FEATURES)}
         >
           Features
-        </a>
-        <a
+        </p>
+        <p
           className={`${currentTab == Tab.COSMETICS ? "is-active" : ""}`}
           onClick={() => selectTab(Tab.COSMETICS)}
         >
           Cosmetics
-        </a>
+        </p>
       </div>
       <motion.div className={"grid-content"} layout>
         {
