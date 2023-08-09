@@ -42,7 +42,7 @@ export const YouTubePlayer = ({id}: { id: string }) => {
       <div className={"session-notice"}>
         <p>
           To view external videos, you need to accept our <b>optional</b> cookies.<br/>
-          <p>Learn more about how we use cookies <Link href={"/privacy"}>here</Link></p>
+          Learn more about how we use cookies <Link href={"/privacy"}>here</Link>
         </p>
         <Button color={"light"} onClick={() => giveConsent(CookieConsentState.ALL)}>
           Allow Cookies
