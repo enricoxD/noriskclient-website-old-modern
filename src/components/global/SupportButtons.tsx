@@ -1,5 +1,5 @@
 "use client"
-import {slideInLeft, slideInRight} from "@/components/global/animation/Animation";
+import {slideInLeftVariants, slideInRightVariants} from "@/components/global/animation/Animation";
 import Section from "@/components/global/Section";
 import {GitHubIcon} from "@/icons/GitHubIcon";
 import {motion} from "framer-motion";
@@ -39,11 +39,11 @@ export const SupportButtons = ({headline}: { headline?: string }) => {
   return (
     <Section headline={headline}>
       <div className={"support-buttons"}>
-        <SupportButton variants={slideInLeft} service={"github"} href={socialLinks.github}>
+        <SupportButton variants={slideInLeftVariants} service={"github"} href={socialLinks.github}>
           <GitHubIcon size={48}/>
         </SupportButton>
 
-        <SupportButton variants={slideInRight} service={"discord"} href={socialLinks.discord}>
+        <SupportButton variants={slideInRightVariants} service={"discord"} href={socialLinks.discord}>
           <DiscordIcon size={48}/>
         </SupportButton>
       </div>
