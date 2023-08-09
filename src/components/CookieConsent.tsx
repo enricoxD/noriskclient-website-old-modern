@@ -34,7 +34,7 @@ export const CookieConsent = () => {
                   media.<br/>
                   Alternatively, you can choose to only accept essential cookies by clicking &quot;Accept Essential&quot;.
               </p>
-              <p>You can change your cookie settings at any time. Read more about our cookie policy <a href={"/cookies"}>here</a></p>
+              <p>You can change your cookie settings at any time. Read more about our cookie policy{/*TODO <a href={"/cookies"}>here</a>*/}</p>
               <div className={"buttons"}>
                   <Button color={"light"} onClick={() => giveConsent(CookieConsentState.ESSENTIAL)}>
                       Accept Essential
