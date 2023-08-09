@@ -6,6 +6,7 @@ import Icon from "@mdi/react";
 import {mdiCart, mdiChevronDown, mdiDownload} from "@mdi/js";
 import {Button} from "@/components/global/Button";
 import {easeInOut, motion, useScroll, useTransform} from "framer-motion"
+import socialLinks from "@/config/socialLinks";
 
 export const NavBar = () => {
   const [isBurgerMenuActive, setBurgerMenuActive] = useState(false)
@@ -69,7 +70,7 @@ export const NavBar = () => {
           </div>
 
           <Link className={"navbar-link"} href={"/faq"}>FAQ</Link>
-          <Link className={"navbar-link"} href={"https://discord.gg/noriskclient"}>Discord</Link>
+          <Link className={"navbar-link"} href={socialLinks.discord}>Discord</Link>
         </div>
 
         <div className={"navbar-end"}>

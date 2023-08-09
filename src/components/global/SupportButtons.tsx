@@ -5,6 +5,7 @@ import {GitHubIcon} from "@/icons/GitHubIcon";
 import {motion} from "framer-motion";
 import {ReactNode} from "react";
 import {DiscordIcon} from "@/icons/DiscordIcon";
+import socialLinks from "@/config/socialLinks";
 
 export const SupportButtons = ({headline}: { headline?: string }) => {
   const SupportButton = ({children, variants, service, href}: {
@@ -38,11 +39,11 @@ export const SupportButtons = ({headline}: { headline?: string }) => {
   return (
     <Section headline={headline}>
       <div className={"support-buttons"}>
-        <SupportButton variants={slideInLeft} service={"github"} href={"https://github.com/noriskclient"}>
+        <SupportButton variants={slideInLeft} service={"github"} href={socialLinks.github}>
           <GitHubIcon size={48}/>
         </SupportButton>
 
-        <SupportButton variants={slideInRight} service={"discord"} href={"https://discord.gg/noriskclient"}>
+        <SupportButton variants={slideInRight} service={"discord"} href={socialLinks.discord}>
           <DiscordIcon size={48}/>
         </SupportButton>
       </div>

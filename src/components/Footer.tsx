@@ -6,6 +6,7 @@ import {YouTubeIcon} from "@/icons/YouTubeIcon";
 import {TwitchIcon} from "@/icons/TwitchIcon";
 import {GitHubIcon} from "@/icons/GitHubIcon";
 import Link from "next/link";
+import socialLinks from "@/config/socialLinks";
 
 export const Footer = () => {
   return (
@@ -13,11 +14,11 @@ export const Footer = () => {
       <div className={"footer-top"}>
         <Image src={"/logo.svg"} alt={"NoRisk Client"} width={48} height={48}/>
         <ul className={"socials"}>
-          <li className={"social github"}><Link href={"https://github.com/noriskclient"} aria-label={"NoRisk Client GitHub"}><GitHubIcon size={24}/></Link></li>
-          <li className={"social discord"}><Link href={"https://discord.gg/noriskclient"} aria-label={"NoRisk Client Discord"}><DiscordIcon size={24}/></Link></li>
-          <li className={"social youtube"}><Link href={"https://youtube.com/@noriskk"} aria-label={"NoRisk YouTube"}><YouTubeIcon size={24}/></Link></li>
-          <li className={"social twitch"}><Link href={"https://twitch.tv/norisk"} aria-label={"NoRisk Twitch"}><TwitchIcon size={24}/></Link></li>
-          <li className={"social twitter"}><Link href={"https://twitter.com/noriskclient"} aria-label={"NoRisk Client Twitter"}><TwitterIcon size={24}/></Link></li>
+          <li className={"social github"}><Link href={socialLinks.github} aria-label={"NoRisk Client GitHub"}><GitHubIcon size={24}/></Link></li>
+          <li className={"social discord"}><Link href={socialLinks.discord} aria-label={"NoRisk Client Discord"}><DiscordIcon size={24}/></Link></li>
+          <li className={"social youtube"}><Link href={socialLinks.youtube} aria-label={"NoRisk YouTube"}><YouTubeIcon size={24}/></Link></li>
+          <li className={"social twitch"}><Link href={socialLinks.twitch} aria-label={"NoRisk Twitch"}><TwitchIcon size={24}/></Link></li>
+          <li className={"social twitter"}><Link href={socialLinks.twitter} aria-label={"NoRisk Client Twitter"}><TwitterIcon size={24}/></Link></li>
         </ul>
       </div>
       <div className={"footer-bottom"}>
