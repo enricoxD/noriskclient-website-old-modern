@@ -63,13 +63,11 @@ export const OperatingSystemSelection = ({currentOs, setCurrentOs}: OperatingSys
   }, []);
 
   async function detectOS() {
-    console.log("window ", typeof window)
     if (typeof window == "object") {
-      console.log("hasdad")
-      /*const platform = navigator.platform;
+      const platform = navigator.platform;
       if (platform.indexOf('Win') !== -1) return Os.WINDOWS;
       if (platform.indexOf('Mac') !== -1) return Os.MAC;
-      if (platform.indexOf('Linux') !== -1) return Os.LINUX;*/
+      if (platform.indexOf('Linux') !== -1) return Os.LINUX;
       return Os.LINUX
     }
     return Os.MAC;
@@ -86,7 +84,6 @@ export const OperatingSystemSelection = ({currentOs, setCurrentOs}: OperatingSys
               subtitle={subtitle}
               currentOs={currentOs}
               handleClick={handleClick}
-              index={index}
               key={`os-${index}`}
             />
           )

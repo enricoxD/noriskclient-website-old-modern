@@ -2,11 +2,10 @@ import {Os} from "@/components/page/download/DownloadSection";
 import Image from "next/image";
 import Icon from "@mdi/react";
 
-export const OperatingSystemCard = ({os, icon, subtitle, index, currentOs, handleClick}: {
+export const OperatingSystemCard = ({os, icon, subtitle, currentOs, handleClick}: {
   os: Os,
   icon: string,
   subtitle: string,
-  index: number,
   currentOs: Os | null,
   handleClick: (os: Os) => void
 }) => {

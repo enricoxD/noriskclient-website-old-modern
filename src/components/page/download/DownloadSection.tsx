@@ -3,7 +3,7 @@ import Section from "@/components/global/Section";
 import {OperatingSystemSelection} from "@/components/page/download/OperatingSystemSelection";
 import {ButtonSection} from "@/components/global/ButtonSection";
 import {Button} from "@/components/global/Button";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 export enum Os {
   WINDOWS = "Windows",
