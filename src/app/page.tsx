@@ -5,6 +5,7 @@ import {IconGrid, IconGridEntryProps} from "@/components/global/IconGrid";
 import {mdiBug, mdiDownload, mdiHelp, mdiLightbulb} from "@mdi/js";
 import {TextMedia} from "@/components/global/textmedia/TextMedia";
 import {SupportButtons} from "@/components/global/SupportButtons";
+import {Media} from "@/components/global/textmedia/Media";
 
 export default function Page() {
 
@@ -33,16 +34,22 @@ export default function Page() {
           title={"NoRisk Client"}
           titleClassName={"huge-text gradient-text"}
           text={"Community-oriented Minecraft Modpack Client providing unique cosmetics and features."}
-          mediaType={"video"}
-          videoId={"xrZ3HM2Xv6Q"}
+          mediaType={"image"}
+          imageUrl={"/logo.svg"}
+          mediaClassName={"matrix-scale"}
           buttonHref={"/download"}
           buttonIcon={mdiDownload}
           buttonLabel={"Download"}
+          reverseTouch
         />
       </HeroSection>
 
       <Section headline={"What we have to offer"} id={"features"}>
         <ModuleGrid/>
+      </Section>
+
+      <Section headline={"Take a look at our latest video!"} id={"features"}>
+        <Media mediaType={"video"} videoId={"xrZ3HM2Xv6Q"} />
       </Section>
 
       <Section headline={"Make It yours!"}
