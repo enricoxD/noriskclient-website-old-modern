@@ -17,6 +17,10 @@
     width: 100%;
     height: 100%;
 
+    @include touch {
+      height: calc(50vh - 80px - 3rem);
+    }
+
     img {
       filter: drop-shadow(10px 4px 7px rgba(0, 0, 0, 0.33));;
       transition: transform 1.25s ease-in-out;
@@ -24,7 +28,9 @@
   }
 
   &.matrix-scale {
-    animation: 4s matrix-scale ease-in-out forwards;
+    @include desktop {
+      animation: 4s matrix-scale ease-in-out forwards;
+    }
   }
 
   @keyframes matrix-scale {
