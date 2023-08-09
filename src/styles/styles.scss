@@ -10,12 +10,13 @@
 
 @import "components/navbar";
 @import "components/footer";
+@import "components/cookie-consent";
+
 @import "components/global/accordion";
 @import "components/global/button";
 @import "components/global/textmedia/text";
 @import "components/global/textmedia/media";
 @import "components/global/textmedia/textmedia";
-@import "components/page/home/modulegrid";
 @import "components/global/icon-grid";
 @import "components/global/youtubeplayer";
 @import "components/global/section";
@@ -23,5 +24,7 @@
 @import "components/global/animation/animation";
 @import "components/global/support-buttons";
 @import "components/global/textfield";
+@import "components/global/button-section";
+
+@import "components/page/home/modulegrid";
 @import "components/page/faq/faqsection";
-@import "components/cookie-consent";
