@@ -1,6 +1,7 @@
 "use client"
 import {Button} from "@/components/global/Button";
 import {CookieConsentState, useCookieConsent} from "@/hooks/useCookieConsent";
+import Link from "next/link";
 
 export const CookieConsent = () => {
   const {consent, giveConsent} = useCookieConsent();
@@ -18,7 +19,7 @@ export const CookieConsent = () => {
                   media.<br/>
                   Alternatively, you can choose to only accept essential cookies by clicking &quot;Accept Essential&quot;.
               </p>
-              <p>You can change your cookie settings at any time. Read more about our cookie policy{/*TODO <Link href={"/cookies"}>here</Link>*/}</p>
+              <p>You can change your cookie settings at any time. Read more about our cookie policy <Link href={"/privacy"}>here</Link></p>
               <div className={"buttons"}>
                   <Button color={"light"} onClick={() => giveConsent(CookieConsentState.ESSENTIAL)}>
                       Accept Essential
