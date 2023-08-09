@@ -1,9 +1,13 @@
+"use client"
 import {Text, TextProps} from "@/components/global/textmedia/Text";
 import {Animation, slideInLeftVariants, slideInRightVariants} from "@/components/global/animation/Animation";
 import {Media, MediaProps} from "@/components/global/textmedia/Media";
+import {useMediaQuery} from "usehooks-ts";
+import {useEffect, useState} from "react";
 
 interface TextMediaProps extends TextProps, MediaProps {
-  image_first?: boolean;
+  reverseTouch?: boolean;
+  imageFirst?: boolean;
   mediaClassName?: string;
 }
 
@@ -20,9 +24,17 @@ export const TextMedia = (
     imageUrl,
     imageAlt,
     mediaClassName,
-    image_first
+    reverseTouch,
+    imageFirst
   }: TextMediaProps) => {
-  const reverse = image_first || false
+  const isTouch = useMediaQuery("(max-width: 1023px)")
+  const [reverse, setReverse] = useState(imageFirst || false)
+
+  useEffect(() => {
+    if (isTouch) {
+      setReverse(reverseTouch || false)
+    }
+  }, [])
 
   const TextJsx = () => (
     <Text
