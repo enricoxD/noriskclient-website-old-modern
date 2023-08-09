@@ -5,7 +5,6 @@ import {IconGrid, IconGridEntryProps} from "@/components/global/IconGrid";
 import {mdiBug, mdiDownload, mdiHelp, mdiLightbulb} from "@mdi/js";
 import {TextMedia} from "@/components/global/textmedia/TextMedia";
 import {SupportButtons} from "@/components/global/SupportButtons";
-import {Text} from "@/components/global/textmedia/Text";
 
 export default function Page() {
 
@@ -52,7 +51,7 @@ export default function Page() {
                id={"community-first"}
       >
         <IconGrid entries={gridEntries}/>
-        <SupportButtons headline={"Contact us here!"}/>
+        <SupportButtons />
       </Section>
     </main>
   )
