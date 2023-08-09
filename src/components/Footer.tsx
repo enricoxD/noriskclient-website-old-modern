@@ -5,6 +5,7 @@ import {TwitterIcon} from "@/icons/TwitterIcon";
 import {YouTubeIcon} from "@/icons/YouTubeIcon";
 import {TwitchIcon} from "@/icons/TwitchIcon";
 import {GitHubIcon} from "@/icons/GitHubIcon";
+import Link from "next/link";
 
 export const Footer = () => {
   return (
@@ -12,20 +13,20 @@ export const Footer = () => {
       <div className={"footer-top"}>
         <Image src={"/logo.svg"} alt={"NoRisk Client"} width={48} height={48}/>
         <ul className={"socials"}>
-          <li className={"social github"}><a href={"https://github.com/noriskclient"}><GitHubIcon size={24}/></a></li>
-          <li className={"social discord"}><a href={"https://discord.gg/noriskclient"}><DiscordIcon size={24}/></a></li>
-          <li className={"social youtube"}><a href={"https://youtube.com/@noriskk"}><YouTubeIcon size={24}/></a></li>
-          <li className={"social twitch"}><a href={"https://twitch.tv/norisk"}><TwitchIcon size={24}/></a></li>
-          <li className={"social twitter"}><a href={"https://x.com/noriskclient"}><TwitterIcon size={24}/></a></li>
+          <li className={"social github"}><Link href={"https://github.com/noriskclient"} aria-label={"NoRisk Client GitHub"}><GitHubIcon size={24}/></Link></li>
+          <li className={"social discord"}><Link href={"https://discord.gg/noriskclient"} aria-label={"NoRisk Client Discord"}><DiscordIcon size={24}/></Link></li>
+          <li className={"social youtube"}><Link href={"https://youtube.com/@noriskk"} aria-label={"NoRisk YouTube"}><YouTubeIcon size={24}/></Link></li>
+          <li className={"social twitch"}><Link href={"https://twitch.tv/norisk"} aria-label={"NoRisk Twitch"}><TwitchIcon size={24}/></Link></li>
+          <li className={"social twitter"}><Link href={"https://twitter.com/noriskclient"} aria-label={"NoRisk Client Twitter"}><TwitterIcon size={24}/></Link></li>
         </ul>
       </div>
       <div className={"footer-bottom"}>
         <p>&copy; 2023 NoRisk Client</p>
         <ul className={"links"}>
-          <li><a href={"/store"}>Store</a></li>
-          <li><a href={"/faq"}>FAQ</a></li>
-          <li><a href={"/tos"}>Terms</a></li>
-          <li><a href={"/privacy"}>Privacy Policy</a></li>
+          <li><Link href={"/store"} aria-label={"NoRisk Client Store"}>Store</Link></li>
+          <li><Link href={"/faq"} aria-label={"NoRisk Client FAQ"}>FAQ</Link></li>
+          <li><Link href={"/tos"} aria-label={"NoRisk Client Terms of Service"}>Terms</Link></li>
+          <li><Link href={"/privacy"} aria-label={"NoRisk Client Privacy Policy"}>Privacy Policy</Link></li>
         </ul>
         <p>Not affiliated with Mojang Studios</p>
       </div>
