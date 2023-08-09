@@ -19,8 +19,9 @@ export const DownloadSection = () => {
     const detectedOs = detectOS();
     setHostOs(detectedOs);
   }, []);
+
   function detectOS() {
-    if (navigator?.platform) {
+    if (typeof window !== "undefined") {
       const platform = navigator.platform;
       if (platform.indexOf('Win') !== -1) return Os.WINDOWS;
       if (platform.indexOf('Mac') !== -1) return Os.MAC;
