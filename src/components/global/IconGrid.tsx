@@ -2,7 +2,6 @@
 import Icon from "@mdi/react";
 import {motion} from "framer-motion";
 import {useMediaQuery} from "usehooks-ts";
-import {Button} from "@/components/global/Button";
 
 export interface IconGridEntryProps {
   icon: string;
@@ -26,7 +25,7 @@ const GridEntry = ({entry}: { entry: EntryProps }) => {
       x: -75,
       opacity: 0
     },
-    shown: {
+    visible: {
       x: 0,
       opacity: 1
     }
@@ -35,7 +34,7 @@ const GridEntry = ({entry}: { entry: EntryProps }) => {
   return (
     <motion.div className={"grid-entry section"}
                 initial={"hidden"}
-                whileInView={"shown"}
+                whileInView={"visible"}
                 viewport={{once: true, amount: 0.4}}
                 variants={variants}
                 transition={{

@@ -22,7 +22,7 @@ const ModuleGridColumn = ({label, icon, image, index}: ModuleGridColumnType) => 
       opacity: 0,
       scale: 0.5
     },
-    shown: {
+    visible: {
       opacity: 1,
       scale: 1
     }
@@ -32,7 +32,7 @@ const ModuleGridColumn = ({label, icon, image, index}: ModuleGridColumnType) => 
     <div className={"column"}>
       <motion.div
         className={`module ${isEnabled ? "enabled" : ""}`}
-        whileInView={"shown"}
+        whileInView={"visible"}
         initial={"hidden"}
         variants={variants}
         transition={{
