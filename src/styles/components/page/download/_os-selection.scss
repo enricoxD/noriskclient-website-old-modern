@@ -1,0 +1,145 @@
+.os-selection {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  scroll-margin-top: 12rem;
+
+  @include mobile {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .os-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: 0.66s os-fade-in ease-in-out forwards;
+    transition: z-index 0.66s ease-in-out;
+    z-index: 1;
+    opacity: 0.7;
+
+    @include desktop {
+      flex: 1 1 0;
+
+      &::before {
+        /*this is just to preserve the wanted aspect ratio*/
+        content: "";
+        display: block;
+        padding-top: 125%;
+      }
+    }
+
+    .os {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      background: bulmaDarken($surface, 8%);
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: -5px 5px 5px 0 rgba(0, 0, 0, 0.55);
+      transition: all 0.66s ease-in-out;
+
+      &::after {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(125deg, rgba(#40404B, 0.1) 45%, rgba(#40404BFF, 0.4));
+        z-index: 3;
+        filter: blur(20px);
+      }
+
+      .image-wrapper {
+        position: relative;
+        width: 100%;
+        flex-basis: 40%;
+        transition: all 0.66s ease-in-out;
+
+        .icon {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, calc(-50% - 0.75rem));
+        }
+      }
+
+      .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 2;
+        margin-top: -1.5rem;
+        padding: 1rem;
+        width: 100%;
+        flex-grow: 1;
+        border-radius: 1.5rem;
+        background: inherit;
+
+        .os-name {
+          font-size: 1.5rem;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          font-family: $font-inter-bold;
+        }
+
+        .subtitle {
+          margin-top: auto;
+          font-size: 0.75rem;
+          text-transform: uppercase;
+        }
+      }
+
+      &.active {
+        background: $background-variant;
+        z-index: 100;
+        scale: 1.25;
+        transform: translateY(-2.5%);
+        border-radius: 1rem;
+        box-shadow: $component-background 0 0 12px 0; // glow
+
+        @include touch {
+          scale: 1.025;
+        }
+
+        .content-wrapper {
+          .os-name {
+            color: $primary;
+          }
+        }
+      }
+
+      &:not(&.active) {
+        .image-wrapper {
+          filter: saturate(0.6) blur(7px) grayscale(0.3);
+        }
+      }
+    }
+
+    &.active {
+      z-index: 5;
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes os-fade-in {
+  from {
+    opacity: 0;
+    scale: 0.3;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
