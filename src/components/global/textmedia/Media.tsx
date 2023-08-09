@@ -6,16 +6,19 @@ export interface MediaProps {
   videoId?: string;
   imageUrl?: string;
   imageAlt?: string;
+  className?: string;
 }
 
-export const Media = ({mediaType, videoId, imageUrl, imageAlt}: MediaProps) => {
+export const Media = ({mediaType, videoId, imageUrl, imageAlt, className}: MediaProps) => {
   return (
-    <div className={"media"}>
+    <div className={`media ${mediaType} ${className ? className : ""}`}>
       {
         mediaType == "video" ?
           <YouTubePlayer id={videoId!}/>
           :
-          <Image src={imageUrl!} alt={imageAlt || ""}/>
+          <div className={"image-wrapper"}>
+            <Image src={imageUrl!} alt={imageAlt || ""} fill/>
+          </div>
       }
     </div>
   )
