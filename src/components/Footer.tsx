@@ -25,7 +25,7 @@ export const Footer = () => {
         <ul className={"links"}>
           <li><Link href={"/store"} aria-label={"NoRisk Client Store"}>Store</Link></li>
           <li><Link href={"/faq"} aria-label={"NoRisk Client FAQ"}>FAQ</Link></li>
-          <li><Link href={"/tos"} aria-label={"NoRisk Client Terms of Service"}>Terms</Link></li>
+          <li><Link href={"/terms"} aria-label={"NoRisk Client Terms of Service"}>Terms</Link></li>
           <li><Link href={"/privacy"} aria-label={"NoRisk Client Privacy Policy"}>Privacy Policy</Link></li>
         </ul>
         <p>Not affiliated with Mojang Studios</p>
