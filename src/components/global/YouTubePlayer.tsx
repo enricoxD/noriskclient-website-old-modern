@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import Image from "next/image";
 import {Button} from "@/components/global/Button";
 import {CookieConsentState, useCookieConsent} from "@/hooks/useCookieConsent";
+import Link from "next/link";
 
 export const YouTubePlayer = ({id}: { id: string }) => {
   const [showVideo, setShowVideo] = useState(false)
@@ -39,7 +40,10 @@ export const YouTubePlayer = ({id}: { id: string }) => {
     if (allowExternalMedia) return null
     return (
       <div className={"session-notice"}>
-        <p>To view external videos, you need to accept our <b>optional</b> cookies.</p>
+        <p>
+          To view external videos, you need to accept our <b>optional</b> cookies.<br/>
+          <p>Learn more about how we use cookies <Link href={"/cookies"}>here</Link></p>
+        </p>
         <Button color={"light"} onClick={() => giveConsent(CookieConsentState.ALL)}>
           Allow Cookies
         </Button>
