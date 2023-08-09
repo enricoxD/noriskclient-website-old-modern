@@ -12,15 +12,18 @@ export enum Os {
 }
 
 export const DownloadSection = () => {
-  const [hostOs, setHostOs] = useState<Os>(detectOS)
-  const [currentOs, setCurrentOs] = useState<Os>(hostOs)
+  const [hostOs, setHostOs] = useState<Os | null>(null)
+  const [currentOs, setCurrentOs] = useState<Os | null>(null)
 
   useEffect(() => {
-    const detectedOs = detectOS();
-    setHostOs(detectedOs);
+    const detectedOs = detectOS()
+      .then((os) => {
+        setHostOs(os);
+        setCurrentOs(os);
+      })
   }, []);
 
-  function detectOS() {
+  async function detectOS() {
     if (typeof window !== "undefined") {
       const platform = navigator.platform;
       if (platform.indexOf('Win') !== -1) return Os.WINDOWS;
@@ -32,14 +35,18 @@ export const DownloadSection = () => {
 
   return (
     <>
-      <Section>
-        <OperatingSystemSelection hostOs={hostOs} currentOs={currentOs} setCurrentOs={setCurrentOs}/>
-      </Section>
-      <ButtonSection backgroundColor={"variant"}>
-        <Button>
-          Start {currentOs} download!
-        </Button>
-      </ButtonSection>
+      {hostOs && currentOs &&
+          <>
+              <Section>
+                  <OperatingSystemSelection hostOs={hostOs} currentOs={currentOs} setCurrentOs={setCurrentOs}/>
+              </Section>
+              <ButtonSection backgroundColor={"variant"}>
+                  <Button>
+                      Start {currentOs} download!
+                  </Button>
+              </ButtonSection>
+          </>
+      }
     </>
   )
 }

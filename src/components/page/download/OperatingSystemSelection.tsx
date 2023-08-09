@@ -35,7 +35,7 @@ const OperatingSystem = ({os, icon, subtitle, index, currentOs, handleClick}: {
 interface OperatingSystemSelectionProps {
   hostOs: Os;
   currentOs: Os;
-  setCurrentOs: Dispatch<SetStateAction<Os>>;
+  setCurrentOs: Dispatch<SetStateAction<Os | null>>;
 }
 
 export const OperatingSystemSelection = ({hostOs, currentOs, setCurrentOs}: OperatingSystemSelectionProps) => {
