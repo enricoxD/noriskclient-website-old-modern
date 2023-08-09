@@ -1,12 +1,12 @@
 "use client"
-import {motion} from "framer-motion";
+import {motion, Variants} from "framer-motion";
 import {ComponentProps} from "react";
 
 interface AnimationProps extends ComponentProps<"div"> {
-  animation: "slideInLeft" | "slideInRight" | "slideInBottom" | "scaleIn"
+  variants: Variants
 }
 
-export const slideInLeft = {
+export const slideInLeftVariants: Variants = {
   visible: {
     x: 0,
     opacity: 1
@@ -17,7 +17,7 @@ export const slideInLeft = {
   }
 }
 
-export const slideInRight = {
+export const slideInRightVariants: Variants  = {
   visible: {
     x: 0,
     opacity: 1
@@ -28,7 +28,7 @@ export const slideInRight = {
   }
 }
 
-const slideInBottom = {
+export const slideInBottomVariants: Variants  = {
   visible: {
     y: 0,
     opacity: 1
@@ -39,7 +39,7 @@ const slideInBottom = {
   }
 }
 
-const scaleIn = {
+export const scaleInVariants: Variants  = {
   visible: {
     scale: 1,
     opacity: 1,
@@ -50,16 +50,7 @@ const scaleIn = {
   }
 }
 
-export const Animation = ({animation, children}: AnimationProps) => {
-  const variants = getAnimationVariants()
-
-  function getAnimationVariants() {
-    if (animation == "slideInLeft") return slideInLeft
-    else if (animation == "slideInRight") return slideInRight
-    else if (animation == "slideInBottom") return slideInBottom
-    else return scaleIn
-  }
-
+export const Animation = ({variants, children}: AnimationProps) => {
   return (
     <motion.div
       className={"animation"}

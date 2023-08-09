@@ -1,5 +1,5 @@
 import {Text, TextProps} from "@/components/global/textmedia/Text";
-import {Animation} from "@/components/global/animation/Animation";
+import {Animation, slideInLeftVariants, slideInRightVariants} from "@/components/global/animation/Animation";
 import {Media, MediaProps} from "@/components/global/textmedia/Media";
 
 interface TextMediaProps extends TextProps, MediaProps {
@@ -36,7 +36,7 @@ export const TextMedia = ({
 
   return (
     <div className={`textmedia`}>
-      <Animation animation={"slideInLeft"}>
+      <Animation variants={slideInLeftVariants}>
         {
           reverse ?
             <MediaJsx />
@@ -44,7 +44,7 @@ export const TextMedia = ({
             <TextJsx />
         }
       </Animation>
-      <Animation animation={"slideInRight"}>
+      <Animation variants={slideInRightVariants}>
         {
           reverse ?
             <TextJsx />
