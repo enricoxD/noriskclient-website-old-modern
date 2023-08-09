@@ -1,23 +1,12 @@
 "use client"
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import Image from "next/image";
 import {Button} from "@/components/global/Button";
-import {useCookies} from "react-cookie";
-import {CookieConsentState} from "@/components/CookieConsent";
+import {CookieConsentState, useCookieConsent} from "@/hooks/useCookieConsent";
 
 export const YouTubePlayer = ({id}: { id: string }) => {
   const [showVideo, setShowVideo] = useState(false)
-  const [cookieConsent, setCookieConsent] = useCookies(["cookieConsent"])
-  const [allowExternalMedia, setAllowExternalMedia] = useState(false)
-
-  const giveCookieConsent = () => {
-    setCookieConsent("cookieConsent", CookieConsentState.ALL, {path: "/"})
-  }
-
-  useEffect(() => {
-    const allowsExternalMedia = cookieConsent.cookieConsent == CookieConsentState.ALL;
-    setAllowExternalMedia(allowsExternalMedia);
-  }, [cookieConsent])
+  const {allowExternalMedia, giveConsent} = useCookieConsent()
 
   const playVideo = () => {
     setShowVideo(true);
@@ -47,10 +36,11 @@ export const YouTubePlayer = ({id}: { id: string }) => {
   }
 
   const CookieWarningJsx = () => {
+    if (allowExternalMedia) return null
     return (
       <div className={"session-notice"}>
         <p>To view external videos, you need to accept our <b>optional</b> cookies.</p>
-        <Button color={"light"} onClick={giveCookieConsent}>
+        <Button color={"light"} onClick={() => giveConsent(CookieConsentState.ALL)}>
           Allow Cookies
         </Button>
       </div>
@@ -59,7 +49,7 @@ export const YouTubePlayer = ({id}: { id: string }) => {
 
   return (
     <div className="youtube-player">
-      {allowExternalMedia ? <VideoJsx /> : <CookieWarningJsx />}
+      {allowExternalMedia ? <VideoJsx/> : <CookieWarningJsx/>}
     </div>
   );
 }

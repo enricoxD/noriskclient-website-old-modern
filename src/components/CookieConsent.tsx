@@ -1,30 +1,14 @@
 "use client"
-import {useCookies} from "react-cookie";
 import {Button} from "@/components/global/Button";
-import {useEffect, useState} from "react";
-
-export enum CookieConsentState {
-  ESSENTIAL = "essential",
-  ALL = "all"
-}
+import {CookieConsentState, useCookieConsent} from "@/hooks/useCookieConsent";
 
 export const CookieConsent = () => {
-  const [cookieConsent, setCookieConsent] = useCookies(["cookieConsent"])
-  const [shouldRender, setShouldRender] = useState(false)
-
-  useEffect(() => {
-    const render = !cookieConsent.cookieConsent
-    setShouldRender(render)
-  }, [cookieConsent])
-
-  const giveConsent = (state: CookieConsentState) => {
-    setCookieConsent("cookieConsent", state, {path: "/"})
-  }
+  const {consent, giveConsent} = useCookieConsent();
 
   return (
     <>
       {
-        shouldRender &&
+        !consent &&
           <section className={"cookie-consent"}>
               <p><b>We use cookies to enhance your browsing experience.</b></p>
               <p>We utilize personal data to enhance your browsing experience on our website. While some data is essential, others assist us in optimizing the content.</p>
