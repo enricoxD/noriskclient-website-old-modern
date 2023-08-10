@@ -9,33 +9,39 @@ interface AnimationProps extends ComponentProps<"div"> {
 export const slideInLeftVariants: Variants = {
   visible: {
     x: 0,
-    opacity: 1
+    opacity: 1,
+    filter: "blur(0px)"
   },
   hidden: {
-    x: -100,
-    opacity: 0
+    x: -75,
+    opacity: 0,
+    filter: "blur(5px)"
   }
 }
 
 export const slideInRightVariants: Variants  = {
   visible: {
     x: 0,
-    opacity: 1
+    opacity: 1,
+    filter: "blur(0)"
   },
   hidden: {
-    x: 100,
-    opacity: 0
+    x: 75,
+    opacity: 0,
+    filter: "blur(5px)"
   }
 }
 
 export const slideInBottomVariants: Variants  = {
   visible: {
     y: 0,
-    opacity: 1
+    opacity: 1,
+    filter: "blur(0)"
   },
   hidden: {
-    y: 100,
-    opacity: 0
+    y: 75,
+    opacity: 0,
+    filter: "blur(5px)"
   }
 }
 
@@ -43,10 +49,12 @@ export const scaleInVariants: Variants  = {
   visible: {
     scale: 1,
     opacity: 1,
+    filter: "blur(0)"
   },
   hidden: {
     scale: 0.5,
-    opacity: 0
+    opacity: 0,
+    filter: "blur(5px)"
   }
 }
 
@@ -60,7 +68,7 @@ export const Animation = ({variants, children}: AnimationProps) => {
         once: true,
         amount: 0.1
       }}
-      transition={{ duration: 0.35 }}
+      transition={{ duration: 1 }}
       variants={variants}
     >
       {children}
