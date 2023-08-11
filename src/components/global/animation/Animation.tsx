@@ -68,7 +68,7 @@ export const Animation = ({variants, children}: AnimationProps) => {
         once: true,
         amount: 0.1
       }}
-      transition={{ duration: 1 }}
+      transition={{ duration: 0.7 }}
       variants={variants}
     >
       {children}
