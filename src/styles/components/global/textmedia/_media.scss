@@ -28,7 +28,7 @@
 
   &.matrix-scale {
     @include desktop {
-      animation: 4s matrix-scale ease-in-out forwards;
+      animation: 2.5s matrix-scale ease-in-out forwards;
     }
   }
 
