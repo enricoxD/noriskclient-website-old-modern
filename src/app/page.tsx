@@ -13,7 +13,7 @@ export default function Page() {
     {
       icon: mdiHelp,
       title: "Support",
-      text: "Join our discord to get support from the community and chat with other people!",
+      text: "Join our Discord to get support from the community and chat with other people!",
     },
     {
       icon: mdiLightbulb,
