@@ -38,7 +38,7 @@ const GridEntry = ({entry}: { entry: EntryProps }) => {
                 viewport={{once: true, amount: 0.4}}
                 variants={variants}
                 transition={{
-                  duration: 0.45,
+                  duration: 0.7,
                   delay: isMobile ? 0.35 : 0.35 * index,
                 }}
     >

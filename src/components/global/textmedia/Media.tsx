@@ -1,7 +1,9 @@
 import {YouTubePlayer} from "@/components/global/YouTubePlayer";
 import Image from "next/image";
+import {Animation} from "@/components/global/animation/Animation";
 
 export interface MediaProps {
+  animation?: any;
   mediaType: "image" | "video";
   videoId?: string;
   imageUrl?: string;
@@ -9,8 +11,8 @@ export interface MediaProps {
   className?: string;
 }
 
-export const Media = ({mediaType, videoId, imageUrl, imageAlt, className}: MediaProps) => {
-  return (
+export const Media = ({animation, mediaType, videoId, imageUrl, imageAlt, className}: MediaProps) => {
+  const MediaJsx = () =>
     <div className={`media ${mediaType} ${className ? className : ""}`}>
       {
         mediaType == "video" ?
@@ -21,6 +23,19 @@ export const Media = ({mediaType, videoId, imageUrl, imageAlt, className}: Media
           </div>
       }
     </div>
+
+
+  return (
+    <>
+      {
+        animation ?
+          <Animation variants={animation}>
+            <MediaJsx/>
+          </Animation>
+          :
+          <MediaJsx/>
+      }
+    </>
   )
 }
 

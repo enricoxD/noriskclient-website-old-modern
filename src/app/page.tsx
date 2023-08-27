@@ -6,6 +6,7 @@ import {mdiBug, mdiDownload, mdiHelp, mdiLightbulb} from "@mdi/js";
 import {TextMedia} from "@/components/global/textmedia/TextMedia";
 import {SupportButtons} from "@/components/global/SupportButtons";
 import {Media} from "@/components/global/textmedia/Media";
+import {slideInLeftVariants} from "@/components/global/animation/Animation";
 
 export default function Page() {
 
@@ -49,7 +50,7 @@ export default function Page() {
       </Section>
 
       <Section headline={"Take a look at our latest video!"} id={"features"}>
-        <Media mediaType={"video"} videoId={"xrZ3HM2Xv6Q"} />
+        <Media animation={slideInLeftVariants} mediaType={"video"} videoId={"xrZ3HM2Xv6Q"} />
       </Section>
 
       <Section headline={"Make It yours!"}

@@ -41,8 +41,8 @@ export const SupportButtons = ({headline}: { headline?: string }) => {
           amount: 0.1
         }}
         transition={{
-          duration: 0.35,
-          delay: index * 0.25
+          duration: 0.7,
+          delay: index * 0.5
       }}
         variants={slideInLeftVariants}
       >
