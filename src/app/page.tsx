@@ -7,6 +7,8 @@ import {TextMedia} from "@/components/global/textmedia/TextMedia";
 import {SupportButtons} from "@/components/global/SupportButtons";
 import {Media} from "@/components/global/textmedia/Media";
 import {slideInLeftVariants} from "@/components/global/animation/Animation";
+import {Code} from "@/components/global/Code";
+import {Text} from "@/components/global/textmedia/Text";
 
 export default function Page() {
 
@@ -50,7 +52,7 @@ export default function Page() {
       </Section>
 
       <Section headline={"Take a look at our latest video!"} id={"features"}>
-        <Media animation={slideInLeftVariants} mediaType={"video"} videoId={"xrZ3HM2Xv6Q"} />
+        <Media animation={slideInLeftVariants} mediaType={"video"} videoId={"xrZ3HM2Xv6Q"}/>
       </Section>
 
       <Section headline={"Make It yours!"}
@@ -59,7 +61,7 @@ export default function Page() {
                id={"community-first"}
       >
         <IconGrid entries={gridEntries}/>
-        <SupportButtons />
+        <SupportButtons/>
       </Section>
     </main>
   )

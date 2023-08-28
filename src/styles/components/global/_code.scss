@@ -1,0 +1,143 @@
+.code-block {
+  $title-bar-background: #1b1f26;
+  $codeblock-background: #0a0e13;
+  border-radius: 10px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 572px;
+  position: relative;
+  background: $codeblock-background;
+  overflow: hidden;
+  box-shadow: rgba(26, 63, 100, 0.5) 0px 20px 30px -10px;
+
+  .title-bar {
+    display: flex;
+    width: 100%;
+    height: 45px;
+    background: $title-bar-background;
+    gap: 16px;
+    padding-left: 16px;
+
+    .title-bar-buttons {
+      display: flex;
+      height: 100%;
+      width: 56px;
+      align-items: center;
+      justify-content: space-between;
+
+      .close, .zoom, .minimize {
+        display: block;
+        width: 13px;
+        height: 13px;
+        border-radius: 100%;
+        background: red;
+      }
+
+      .close {
+        background: #FF5F57;
+      }
+
+      .zoom {
+        background: #FEBC2E;
+      }
+
+      .minimize {
+        background: #28C840;
+      }
+    }
+
+    .tab-list {
+      display: flex;
+      gap: 6px;
+
+      .tab-button {
+        position: relative;
+        display: flex;
+        padding: 0 24px 0 16px;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        height: 90%;
+        align-self: end;
+        border-radius: 6px 6px 0 0;
+        cursor: pointer;
+        user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-user-select: none;
+
+        .tab-name {
+          display: flex;
+          gap: 6px;
+          align-self: center;
+        }
+
+        &.active {
+          background: $codeblock-background;
+
+          .bottom-corner-left, .bottom-corner-right {
+            position: absolute;
+            top: 100%;
+            left: -12px;
+            width: 12px;
+            height: 12px;
+            transform: translateY(-12px);
+            background: $codeblock-background;
+          }
+
+          .bottom-corner-right {
+            left: 100%;
+          }
+
+          .bottom-corner-right-overlaying, .bottom-corner-left-overlaying {
+            position: absolute;
+            bottom: 0px;
+            width: 12px;
+            height: 12px;
+            background: $title-bar-background;
+          }
+
+          .bottom-corner-left-overlaying {
+            left: -12px;
+            border-bottom-right-radius: 6px;
+          }
+
+          .bottom-corner-right-overlaying {
+            right: -12px;
+            border-bottom-left-radius: 6px;
+          }
+        }
+      }
+    }
+  }
+
+  pre {
+    min-width: 100%;
+    overflow-x: scroll;
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    code {
+      white-space: pre;
+      font-family: $font-roboto-regular;
+      font-size: 16px;
+
+      * {
+        font-family: $font-roboto-regular;
+        font-size: 16px;
+      }
+
+      .highlight-green {
+        background: green;
+      }
+    }
+  }
+}
+
+pre.hljs {
+  padding-left: 0;
+}
+
+.hljs-keyword {
+  color: #fd887b;
+}
