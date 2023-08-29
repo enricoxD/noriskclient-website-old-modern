@@ -54,7 +54,7 @@ export const TextCode = (
       <Animation variants={slideInLeftVariants}>
         {reverse ? <CodeJsx/> : <TextJsx/>}
       </Animation>
-      <Animation variants={slideInRightVariants}>
+      <Animation variants={slideInRightVariants} transition={{duration: 0.7, delay: 0.3}}>
         {reverse ? <TextJsx/> : <CodeJsx/>}
       </Animation>
     </div>

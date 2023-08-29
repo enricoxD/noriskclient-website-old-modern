@@ -53,20 +53,10 @@ export const TextMedia = (
   return (
     <div className={`textmedia`}>
       <Animation variants={slideInLeftVariants}>
-        {
-          reverse ?
-            <MediaJsx/>
-            :
-            <TextJsx/>
-        }
+        {reverse ? <MediaJsx/> : <TextJsx/>}
       </Animation>
-      <Animation variants={slideInRightVariants}>
-        {
-          reverse ?
-            <TextJsx/>
-            :
-            <MediaJsx/>
-        }
+      <Animation variants={slideInRightVariants} transition={{duration: 0.7, delay: 0.3}}>
+        {reverse ? <TextJsx/> : <MediaJsx/>}
       </Animation>
     </div>
   )
