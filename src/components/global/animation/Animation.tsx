@@ -1,9 +1,10 @@
 "use client"
-import {motion, Variants} from "framer-motion";
+import {motion, Transition, Variants} from "framer-motion";
 import {ComponentProps} from "react";
 
 interface AnimationProps extends ComponentProps<"div"> {
   variants: Variants
+  transition?: Transition
 }
 
 export const slideInLeftVariants: Variants = {
@@ -58,7 +59,7 @@ export const scaleInVariants: Variants  = {
   }
 }
 
-export const Animation = ({variants, children}: AnimationProps) => {
+export const Animation = ({variants, transition, children}: AnimationProps) => {
   return (
     <motion.div
       className={"animation"}
@@ -68,7 +69,7 @@ export const Animation = ({variants, children}: AnimationProps) => {
         once: true,
         amount: 0.1
       }}
-      transition={{ duration: 0.7 }}
+      transition={transition ?? { duration: 0.7 }}
       variants={variants}
     >
       {children}
