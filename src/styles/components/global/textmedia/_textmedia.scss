@@ -1,11 +1,44 @@
 .textmedia {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  gap: 3rem;
+  width: 100%;
 
-  @include touch {
-    gap: 4rem;
-    flex-direction: column;
+  .title-container {
+    .animation {
+      width: 100%;
+      display: flex;
+
+      .title, span {
+        flex: 1 1 0;
+      }
+
+      .title {
+        text-align: center;
+        padding-bottom: 0.5rem;
+        letter-spacing: -0.3px;
+
+        @include mobile {
+          padding-bottom: 1.5rem;
+          font-size: 32px;
+          line-height: 42px;
+        }
+
+        @include tablet {
+          padding-bottom: 1.5rem;
+          font-size: 44px;
+          line-height: 54px;
+        }
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 3rem;
+
+    @include touch {
+      gap: 4rem;
+      flex-direction: column;
+    }
   }
 }
