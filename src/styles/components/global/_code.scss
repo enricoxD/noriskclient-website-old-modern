@@ -111,24 +111,45 @@
     }
   }
 
+  .inner-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+  }
+
   pre {
+    position: relative;
+    text-align: left;
     min-width: 100%;
     overflow-x: scroll;
     padding-top: 16px;
     padding-bottom: 16px;
+    aspect-ratio: 16/9;
+    white-space: pre-wrap;
+    line-height: 1.2;
+    font-family: $font-roboto-regular;
+    font-size: 16px;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(160deg, rgba(#40404B, 0.0) 33%, rgba(#40404BFF, 0.25));
+    }
 
     code {
-      white-space: pre;
-      font-family: $font-roboto-regular;
-      font-size: 16px;
-
       * {
         font-family: $font-roboto-regular;
-        font-size: 16px;
+        font-size: 17px;
       }
 
-      .highlight-green {
-        background: green;
+      span {
+        height: 18px !important;
       }
     }
   }

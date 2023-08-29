@@ -7,8 +7,6 @@ import {TextMedia} from "@/components/global/textmedia/TextMedia";
 import {SupportButtons} from "@/components/global/SupportButtons";
 import {Media} from "@/components/global/textmedia/Media";
 import {slideInLeftVariants} from "@/components/global/animation/Animation";
-import {Code} from "@/components/global/Code";
-import {Text} from "@/components/global/textmedia/Text";
 
 export default function Page() {
 
