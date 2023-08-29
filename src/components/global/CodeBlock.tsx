@@ -20,7 +20,7 @@ interface ImageTabProps extends TabProps {
 }
 
 export interface CodeProps {
-  otherTab?: ImageTabProps
+  imageTab?: ImageTabProps
   codeTabs: CodeTabProps[]
 }
 
@@ -90,8 +90,8 @@ const TabContent = ({tab}: { tab: TabProps }) => {
   }
 }
 
-export const Code = ({otherTab, codeTabs}: CodeProps) => {
-  const allTabs = otherTab ? [otherTab, ...codeTabs] : codeTabs
+export const Code = ({imageTab, codeTabs}: CodeProps) => {
+  const allTabs = imageTab ? [imageTab, ...codeTabs] : codeTabs
   const [currentTab, setTab] = useState<TabProps>(allTabs[0])
 
   return (
