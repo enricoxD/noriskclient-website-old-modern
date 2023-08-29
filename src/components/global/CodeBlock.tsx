@@ -3,7 +3,6 @@ import {Dispatch, SetStateAction, useState} from "react"
 import Image from "next/image"
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import {atelierCaveDark} from "react-syntax-highlighter/dist/cjs/styles/hljs"
-import {motion, AnimatePresence} from 'framer-motion';
 
 interface TabProps {
   name: string,
@@ -12,7 +11,7 @@ interface TabProps {
 
 interface CodeTabProps extends TabProps {
   language: string,
-  linesToHighlight: number[]
+  linesToHighlight?: number[]
 }
 
 interface ImageTabProps extends TabProps {
@@ -46,7 +45,7 @@ const TabButton = ({tab, currentTab, setTab}: {
 }
 
 const TabContent = ({tab}: { tab: TabProps }) => {
-  if ('language' in tab && 'linesToHighlight' in tab) {
+  if ('language' in tab) {
     const codeTab = tab as CodeTabProps
 
     return (
@@ -63,7 +62,7 @@ const TabContent = ({tab}: { tab: TabProps }) => {
           return {
             fontFamily: "\"Roboto-Regular\", sans-serif",
             width: '2.25em',
-/*            color: codeTab.linesToHighlight.includes(lineNumber) ? "#28C840" : "#738A94CC",
+/*          color: codeTab.linesToHighlight.includes(lineNumber) ? "#28C840" : "#738A94CC",
             backgroundColor: codeTab.linesToHighlight.includes(lineNumber) ? "#266539" : "#0A0E13",*/
             color: "#738A94CC",
             backgroundColor: "#0A0E13"
@@ -83,7 +82,7 @@ const TabContent = ({tab}: { tab: TabProps }) => {
   } else {
     const imageTab = tab as ImageTabProps
     return (
-      <div className={"inner-image-wrapper"}>
+      <div className={"image-wrapper"}>
         <Image src={imageTab.content} alt={imageTab.name} fill/>
       </div>
     )
@@ -108,17 +107,9 @@ export const Code = ({imageTab, codeTabs}: CodeProps) => {
           })}
         </div>
       </div>
-      <AnimatePresence mode={"wait"}>
-        <motion.div
-          key={currentTab.name}
-          initial={{opacity: 0.2}}
-          animate={{opacity: 1}}
-          exit={{opacity: 0.2}}
-          transition={{duration: 0.1, ease: 'easeInOut'}}
-        >
-          <TabContent tab={currentTab}/>
-        </motion.div>
-      </AnimatePresence>
+      <div>
+        <TabContent tab={currentTab}/>
+      </div>
     </div>
   )
 }
