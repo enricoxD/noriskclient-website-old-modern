@@ -36,6 +36,10 @@
 
     &.left-text {
       text-align: left;
+
+      @include touch {
+        text-align: center;
+      }
     }
   }
 
