@@ -17,6 +17,7 @@
     background: $title-bar-background;
     gap: 16px;
     padding-left: 16px;
+    overflow-x: auto;
 
     .title-bar-buttons {
       display: flex;
@@ -43,6 +44,10 @@
 
       .minimize {
         background: #28C840;
+      }
+
+      @include mobile {
+        display: none;
       }
     }
 
