@@ -12,7 +12,8 @@ export default function FAQ() {
 			<HeroSection>
 				<Text
 					title={"Client 🤝 Server"}
-					text={"To allow servers to further customize their users' experience, we provide a simple wrapper for our API"}
+					text={"To allow servers to further customize their users' experience, we provide a simple wrapper for our API<br><br>" +
+						"Here, we provide examples in both Kotlin and Java."}
 				/>
 			</HeroSection>
 
