@@ -97,9 +97,9 @@ export const Code = ({imageTab, codeTabs}: CodeProps) => {
     <div className={"code-block"}>
       <div className={"title-bar"}>
         <div className={"title-bar-buttons"}>
-          <circle className={"close"}/>
-          <circle className={"zoom"}/>
-          <circle className={"minimize"}/>
+          <span className={"close"}/>
+          <span className={"zoom"}/>
+          <span className={"minimize"}/>
         </div>
         <div className={"tab-list"}>
           {allTabs.map((tab) => {
