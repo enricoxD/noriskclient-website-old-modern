@@ -3,23 +3,24 @@ import {Dispatch, SetStateAction, useState} from "react"
 import Image from "next/image"
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import {atelierCaveDark} from "react-syntax-highlighter/dist/cjs/styles/hljs"
+import {Media, MediaProps} from "@/components/global/textmedia/Media";
 
 interface TabProps {
   name: string,
-  content: string,
 }
 
 interface CodeTabProps extends TabProps {
   language: string,
-  linesToHighlight?: number[]
+  content: string,
+  linesToHighlight?: number[],
 }
 
-interface ImageTabProps extends TabProps {
+interface MediaTabProps extends TabProps, MediaProps {
   icon: string,
 }
 
 export interface CodeProps {
-  imageTab?: ImageTabProps
+  mediaTab?: MediaTabProps
   codeTabs: CodeTabProps[]
 }
 
@@ -80,17 +81,24 @@ const TabContent = ({tab}: { tab: TabProps }) => {
       </SyntaxHighlighter>
     )
   } else {
-    const imageTab = tab as ImageTabProps
+    const imageTab = tab as MediaTabProps
     return (
-      <div className={"image-wrapper"}>
-        <Image src={imageTab.content} alt={imageTab.name} fill/>
+      <div className={"media-wrapper"}>
+        <Media
+          animation={imageTab.animation}
+          mediaType={imageTab.mediaType}
+          videoId={imageTab.videoId}
+          imageUrl={imageTab.imageUrl}
+          imageAlt={imageTab.imageAlt}
+          className={imageTab.className}
+        />
       </div>
     )
   }
 }
 
-export const Code = ({imageTab, codeTabs}: CodeProps) => {
-  const allTabs = imageTab ? [imageTab, ...codeTabs] : codeTabs
+export const Code = ({mediaTab, codeTabs}: CodeProps) => {
+  const allTabs = mediaTab ? [mediaTab, ...codeTabs] : codeTabs
   const [currentTab, setTab] = useState<TabProps>(allTabs[0])
 
   return (

@@ -116,12 +116,17 @@
     }
   }
 
-  .image-wrapper {
+  .media-wrapper {
     position: relative;
     width: 100%;
     height: 100%;
     aspect-ratio: 16/9;
     overflow: hidden;
+
+    * {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
   }
 
   pre {

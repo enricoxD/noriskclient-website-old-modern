@@ -24,7 +24,7 @@ export const TextCode = (
     reverseTouch,
     codeFirst,
     codeTabs,
-    imageTab,
+    mediaTab,
     titleAboveContent,
     titleAlign,
     leftText
@@ -54,7 +54,7 @@ export const TextCode = (
 
   const CodeJsx = () => <Code
     codeTabs={codeTabs}
-    imageTab={imageTab}
+    mediaTab={mediaTab}
   />
 
   const TitleJsx = () => {

@@ -4,7 +4,7 @@ import {SupportButtons} from "@/components/global/SupportButtons";
 import Section from "@/components/global/Section";
 import {TextCode} from "@/components/global/textmedia/TextCode";
 import {Code} from "@/components/global/CodeBlock";
-import {Animation, slideInLeftVariants, slideInRightVariants} from "@/components/global/animation/Animation";
+import {Animation, slideInLeftVariants} from "@/components/global/animation/Animation";
 
 export default function FAQ() {
 	return (
@@ -51,8 +51,7 @@ dependencies {
 }
 `,
 						}
-					]}
-					/>
+					]}/>
 				</Animation>
 			</Section>
 
@@ -103,10 +102,12 @@ public class JoinListener implements Listener {
 							linesToHighlight: [7, 8, 9, 10]
 						}
 					]}
-					imageTab={{
+					mediaTab={{
 						name: "Blockhit.jpg",
 						icon: "/image.svg",
-						content: "/blockhit.jpg"
+						mediaType: "image",
+						imageUrl: "/blockhit.jpg",
+						imageAlt: "Custom PvP"
 					}}
 				/>
 			</Section>
@@ -151,10 +152,11 @@ public class JoinListener implements Listener {
 							linesToHighlight: [7, 8, 9, 10]
 						}
 					]}
-					imageTab={{
-						name: "Blockhit.jpg",
-						icon: "/image.svg",
-						content: "/blockhit.jpg"
+					mediaTab={{
+						name: "TickSpeed.mp4",
+						icon: "/video.svg",
+						mediaType: "video",
+						videoId: "xrZ3HM2Xv6Q"
 					}}
 				/>
 			</Section>
