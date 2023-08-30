@@ -1,30 +1,43 @@
-<!--
-  - The MIT License (MIT)
-  -
-  - Copyright (c) 2015-2022 Elior "Mallowigi" Boukhobza
-  -
-  - Permission is hereby granted, free of charge, to any person obtaining a copy
-  - of this software and associated documentation files (the "Software"), to deal
-  - in the Software without restriction, including without limitation the rights
-  - to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-  - copies of the Software, and to permit persons to whom the Software is
-  - furnished to do so, subject to the following conditions:
-  -
-  - The above copyright notice and this permission notice shall be included in all
-  - copies or substantial portions of the Software.
-  -
-  - THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  - IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  - FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-  - AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-  - LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-  - OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-  - SOFTWARE.
-  -
-  -
-  -->
-
-<svg big="true" xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 -1 16 16">
-    <path id="file_type_gradle.svg" class="i-color" fill="#26A2C1" iconColor="Gradle"
-          d="M14.59,2.257A2.291,2.291,0,0,0,12.579.989c-0.769-.015-1.4.445-1.284,0.751a4.954,4.954,0,0,0,.261.547c0.13,0.2.357,0.044,0.439,0a1.214,1.214,0,0,1,.79-0.146,1.187,1.187,0,0,1,.892.736A2.071,2.071,0,0,1,10.21,4.86a5.525,5.525,0,0,0-5.437-.809c-0.988.35-1.448,0.7-1.057,1.509a17.146,17.146,0,0,0,.872,1.677C5.405,8.688,7.2,6.567,7.2,6.567,5.865,8.7,4.719,8.185,4.279,7.442a11.8,11.8,0,0,1-.707-1.451C0.188,7.288,1.1,12.969,1.1,12.969l1.682,0.007c0.426-2.107,1.963-2.02,2.224.007l1.284,0.007c1.133-4.112,4.009.015,4.009,0.015l1.675,0.007c-0.467-2.807.94-3.69,1.826-5.33S15.544,4.022,14.59,2.257Zm-5.21,5.5a0.921,0.921,0,0,1-.529-1.181s0.206,0.073.549,0.19a0.361,0.361,0,0,0-.055.255,0.392,0.392,0,0,0,.426.357,0.406,0.406,0,0,0,.35-0.357q0.206,0.077.432,0.153A0.945,0.945,0,0,1,9.38,7.755Z"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   big="true"
+   width="16px"
+   height="16px"
+   viewBox="0 -1 16 16"
+   version="1.1"
+   id="svg3"
+   sodipodi:docname="gradle.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs7" />
+  <sodipodi:namedview
+     id="namedview5"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="51.8125"
+     inkscape:cx="6.0410133"
+     inkscape:cy="8.0096502"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3" />
+  <path
+     id="file_type_gradle.svg"
+     class="i-color"
+     fill="#26A2C1"
+     iconColor="Gradle"
+     d="M14.59,2.257A2.291,2.291,0,0,0,12.579.989c-0.769-.015-1.4.445-1.284,0.751a4.954,4.954,0,0,0,.261.547c0.13,0.2.357,0.044,0.439,0a1.214,1.214,0,0,1,.79-0.146,1.187,1.187,0,0,1,.892.736A2.071,2.071,0,0,1,10.21,4.86a5.525,5.525,0,0,0-5.437-.809c-0.988.35-1.448,0.7-1.057,1.509a17.146,17.146,0,0,0,.872,1.677C5.405,8.688,7.2,6.567,7.2,6.567,5.865,8.7,4.719,8.185,4.279,7.442a11.8,11.8,0,0,1-.707-1.451C0.188,7.288,1.1,12.969,1.1,12.969l1.682,0.007c0.426-2.107,1.963-2.02,2.224.007l1.284,0.007c1.133-4.112,4.009.015,4.009,0.015l1.675,0.007c-0.467-2.807.94-3.69,1.826-5.33S15.544,4.022,14.59,2.257Zm-5.21,5.5a0.921,0.921,0,0,1-.529-1.181s0.206,0.073.549,0.19a0.361,0.361,0,0,0-.055.255,0.392,0.392,0,0,0,.426.357,0.406,0.406,0,0,0,.35-0.357q0.206,0.077.432,0.153A0.945,0.945,0,0,1,9.38,7.755Z"
+     style="fill:#477dd0;fill-opacity:1" />
 </svg>
