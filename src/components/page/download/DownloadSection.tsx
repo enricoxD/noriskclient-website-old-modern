@@ -1,9 +1,10 @@
-"use client"
 import Section from "@/components/global/Section";
-import {OperatingSystemSelection} from "@/components/page/download/OperatingSystemSelection";
+import {
+  OperatingSystemSelection,
+  OperatingSystemSelectionProps
+} from "@/components/page/download/OperatingSystemSelection";
 import {ButtonSection} from "@/components/global/ButtonSection";
 import {Button} from "@/components/global/Button";
-import {useState} from "react";
 
 export enum Os {
   WINDOWS = "Windows",
@@ -11,13 +12,11 @@ export enum Os {
   LINUX = "Linux"
 }
 
-export const DownloadSection = () => {
-  const [currentOs, setCurrentOs] = useState<Os | null>(null)
-
+export const DownloadSection = ({ currentOs, setCurrentOs, hostOs }: OperatingSystemSelectionProps) => {
   return (
     <>
       <Section>
-        <OperatingSystemSelection currentOs={currentOs} setCurrentOs={setCurrentOs}/>
+        <OperatingSystemSelection currentOs={currentOs} setCurrentOs={setCurrentOs} hostOs={hostOs}/>
       </Section>
       <ButtonSection backgroundColor={"variant"}>
         <Button>

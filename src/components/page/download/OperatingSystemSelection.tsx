@@ -5,13 +5,13 @@ import {Os} from "@/components/page/download/DownloadSection";
 import {mdiApple, mdiLinux, mdiMicrosoftWindows} from "@mdi/js";
 import {OperatingSystemCard} from "@/components/page/download/OperatingSystemCard";
 
-interface OperatingSystemSelectionProps {
+export interface OperatingSystemSelectionProps {
   currentOs: Os | null;
   setCurrentOs: Dispatch<SetStateAction<Os | null>>;
+  hostOs: Os | null;
 }
 
-export const OperatingSystemSelection = ({currentOs, setCurrentOs}: OperatingSystemSelectionProps) => {
-  const [hostOs, setHostOs] = useState<Os | null>(null)
+export const OperatingSystemSelection = ({currentOs, setCurrentOs, hostOs }: OperatingSystemSelectionProps) => {
   const sectionRef = useRef<HTMLDivElement | null>(null)
   const isMobile = useMediaQuery("(max-width: 768px)")
 
@@ -51,27 +51,6 @@ export const OperatingSystemSelection = ({currentOs, setCurrentOs}: OperatingSys
     }
     setOrderedOperatingSystems(rearrangedOperatingSystems)
   }, [hostOs])
-
-  // detect the users operating system
-  useEffect(() => {
-    detectOS()
-      .then((os) => {
-        console.log("Detected ", os)
-        setHostOs(os);
-        setCurrentOs(os);
-      })
-  }, []);
-
-  async function detectOS() {
-    if (typeof window == "object") {
-      const platform = navigator.platform;
-      if (platform.indexOf('Win') !== -1) return Os.WINDOWS;
-      if (platform.indexOf('Mac') !== -1) return Os.MAC;
-      if (platform.indexOf('Linux') !== -1) return Os.LINUX;
-      return Os.LINUX
-    }
-    return Os.MAC;
-  }
 
   return (
     <div ref={sectionRef} className={`os-selection ${!hostOs ? "loading" : ""}`}>
