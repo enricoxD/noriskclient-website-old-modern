@@ -38,7 +38,7 @@ const ModuleGridColumn = ({label, icon, image, index}: ModuleGridColumnType) => 
         transition={{
           ease: "easeInOut",
           duration: 0.7,
-          delay: isMobile ? 0.5 * (index % 2 + 1) : 0.5 * (index % 3 + 1),
+          delay: isMobile ? 0.5 * (index % 2 + 1) : 0.3 * (index + 1),
           scale: {
             duration: 0.3
           }
