@@ -70,8 +70,8 @@ export const NavBar = () => {
           </div>
 
           <Link className={"navbar-link"} href={"/faq"}>FAQ</Link>
-          <Link className={"navbar-link"} href={socialLinks.discord}>Discord</Link>
           <Link className={"navbar-link"} href={"/api"}>API</Link>
+          <Link className={"navbar-link"} href={socialLinks.discord}>Discord</Link>
         </div>
 
         <div className={"navbar-end"}>
