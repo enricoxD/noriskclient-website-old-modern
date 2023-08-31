@@ -10,7 +10,7 @@ interface ModuleGridColumnType {
   label: string;
   icon?: string;
   image?: string;
-  index: number
+  index: number;
 }
 
 const ModuleGridColumn = ({label, icon, image, index}: ModuleGridColumnType) => {
