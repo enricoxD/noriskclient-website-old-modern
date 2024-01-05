@@ -16,16 +16,14 @@
       gap: 0.75rem;
 
       .social {
+        transition: transform 0.3s;
+
         * {
-          transition: all 0.35s ease-in-out;
+          transition: color 0.25s, text-shadow 0.25s;
         }
 
         &:hover {
-          &.github {
-            * {
-              color: #0D0D0D;
-            }
-          }
+          transform: scale(1.2);
 
           &.discord {
             * {
@@ -68,6 +66,11 @@
 
       a {
         font-size: 16px;
+        transition: all 0.3s;
+
+        &:hover {
+          font-size: calc(16px * 1.2);
+        }
       }
     }
 

@@ -56,22 +56,22 @@ export const NavBar = () => {
         <div className={"navbar-start"}>
           <div className={"navbar-dropdown"}>
             <Link className={"navbar-link"} href={"/"}>
-              Client
+              <span>Client</span>
               <Icon path={mdiChevronDown} className={"chevron-icon"} size={1} color={"#938F99"}/>
             </Link>
             <div className={"dropdown-box"}>
               <Link className={"navbar-link"} href={"/#features"}>
-                Unique Features
+                <span>Unique Features</span>
               </Link>
               <Link className={"navbar-link"} href={"/#community-first"}>
-                Community First
+                <span>Community First</span>
               </Link>
             </div>
           </div>
 
-          <Link className={"navbar-link"} href={"/faq"}>FAQ</Link>
-          <Link className={"navbar-link"} href={"/api"}>API</Link>
-          <Link className={"navbar-link"} href={socialLinks.discord}>Discord</Link>
+          <Link className={"navbar-link"} href={"/faq"}><span>FAQ</span></Link>
+          <Link className={"navbar-link"} href={"/api"}><span>API</span></Link>
+          <Link className={"navbar-link"} href={socialLinks.discord}><span>Discord</span></Link>
         </div>
 
         <div className={"navbar-end"}>
