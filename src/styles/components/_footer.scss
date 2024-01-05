@@ -23,7 +23,7 @@
         }
 
         &:hover {
-          transform: scale(1.2);
+          transform: scale(1.4);
 
           &.discord {
             * {
@@ -62,14 +62,15 @@
       display: flex;
       list-style: none;
       align-items: center;
-      gap: 0.75rem;
+      gap: 1.35rem;
 
       a {
-        font-size: 16px;
+        font-size: 13px;
         transition: all 0.3s;
+        font-family: $p2s;
 
         &:hover {
-          font-size: calc(16px * 1.2);
+          font-size: calc(13px * 1.2);
         }
       }
     }
