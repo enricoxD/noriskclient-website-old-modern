@@ -7,6 +7,7 @@ import {TwitchIcon} from "@/icons/TwitchIcon";
 import {GitHubIcon} from "@/icons/GitHubIcon";
 import Link from "next/link";
 import socialLinks from "@/config/socialLinks";
+import {TikTokIcon} from "@/icons/TikTokIcon";
 
 export const Footer = () => {
   return (
@@ -19,6 +20,7 @@ export const Footer = () => {
           <li className={"social youtube"}><Link href={socialLinks.youtube} aria-label={"NoRisk YouTube"}><YouTubeIcon size={24}/></Link></li>
           <li className={"social twitch"}><Link href={socialLinks.twitch} aria-label={"NoRisk Twitch"}><TwitchIcon size={24}/></Link></li>
           <li className={"social twitter"}><Link href={socialLinks.twitter} aria-label={"NoRisk Client Twitter"}><TwitterIcon size={24}/></Link></li>
+          <li className={"social tiktok"}><Link href={socialLinks.tiktok} aria-label={"NoRisk Client Twitter"}><TikTokIcon size={24}/></Link></li>
         </ul>
       </div>
       <div className={"footer-bottom"}>
