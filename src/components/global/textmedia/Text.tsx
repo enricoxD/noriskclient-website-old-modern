@@ -16,7 +16,7 @@ export const Text = ({title, titleClassName, text, leftText, buttonHref, buttonL
 		<div className={"text"}>
 			{title &&
 				<Animation variants={slideInLeftVariants} transition={{duration: 0.7, delay: 0.3}}>
-					<p className={`title ${titleClassName}`}>{title}</p>
+					<h2 className={`title ${titleClassName}`}>{title}</h2>
 				</Animation>
 			}
 			<Animation variants={slideInLeftVariants} transition={{duration: 0.7, delay: title ? 0.6 : 0.0}}>

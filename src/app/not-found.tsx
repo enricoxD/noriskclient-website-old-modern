@@ -1,4 +1,3 @@
-import {Button} from "@/components/global/Button";
 import HeroSection from "@/components/HeroSection";
 import {Text} from "@/components/global/textmedia/Text";
 import {mdiHome} from "@mdi/js";

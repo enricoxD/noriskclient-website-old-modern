@@ -34,10 +34,10 @@ export const Button = (props: ButtonProps) => {
             onClick={invokeOnClick}
             {...attributes}
           >
-            <p>
+            <span>
               {icon && <Icon path={icon} className={"icon"} size={0.75}/>}
               {children}
-            </p>
+            </span>
           </button>
       }
     </>

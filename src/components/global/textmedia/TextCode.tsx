@@ -58,8 +58,8 @@ export const TextCode = (
   />
 
   const TitleJsx = () => {
-    const ActualTitle = () => <p
-      className={`title ${titleClassName ? titleClassName : ""} ${titleAlign ? titleAlign : ""}`}>{title}</p>
+    const ActualTitle = () => <span
+      className={`title ${titleClassName ? titleClassName : ""} ${titleAlign ? titleAlign : ""}`}>{title}</span>
 
     return (
       <div className={`title-container`}>
@@ -69,13 +69,13 @@ export const TextCode = (
           </Animation>
           : titleAlign == "right" ?
             <Animation variants={slideInRightVariants}>
-              <span/>
+              {isTouch && <span/> }
               <ActualTitle/>
             </Animation>
             :
             <Animation variants={slideInLeftVariants}>
               <ActualTitle/>
-              <span/>
+              {isTouch && <span/> }
             </Animation>
         }
       </div>

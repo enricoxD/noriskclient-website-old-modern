@@ -31,12 +31,12 @@
     letter-spacing: -0.3px;
 
     @include mobile {
-      font-size: 32px;
+      font-size: 28px;
       line-height: 42px;
     }
 
     @include tablet {
-      font-size: 44px;
+      font-size: 38px;
       line-height: 54px;
     }
   }

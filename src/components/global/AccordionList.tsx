@@ -22,7 +22,7 @@ const Accordion = ({accordion, expanded, setExpanded, index}: { accordion: Accor
         animate={{backgroundColor: isOpen ? "#6163FF" : "#25232A"}}
         onClick={() => setExpanded(isOpen ? false : index)}
       >
-        {label}
+        <span className={"label"}>{label}</span>
       </motion.div>
 
       <AnimatePresence initial={false}>

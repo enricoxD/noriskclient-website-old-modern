@@ -48,7 +48,7 @@ export const SupportButtons = ({headline}: { headline?: string }) => {
       >
         <a className={`support-button ${service}`} href={href}>
           {children}
-          <p className={"service-name"}>{shownName}</p>
+          <span className={"service-name"}>{shownName}</span>
         </a>
       </motion.div>
     )

@@ -49,7 +49,7 @@ const ModuleGridColumn = ({label, icon, image, index}: ModuleGridColumnType) => 
         }}
       >
         <div className="label" onClick={() => setEnabled(!isEnabled)}>
-          <p>{label}</p>
+          <span>{label}</span>
         </div>
         <div className={"icon-holder"}>
           {icon && <Icon path={icon} className={"icon"}/>}

@@ -61,7 +61,7 @@ const TabContent = ({tab}: { tab: TabProps }) => {
         }}
         lineNumberStyle={(lineNumber) => {
           return {
-            fontFamily: "\"Roboto-Regular\", sans-serif",
+            fontFamily: "\"NotoSans-Regular\", sans-serif",
             width: '2.25em',
 /*          color: codeTab.linesToHighlight.includes(lineNumber) ? "#28C840" : "#738A94CC",
             backgroundColor: codeTab.linesToHighlight.includes(lineNumber) ? "#266539" : "#0A0E13",*/

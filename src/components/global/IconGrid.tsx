@@ -45,7 +45,7 @@ const GridEntry = ({entry}: { entry: EntryProps }) => {
         <span className={"icon-background"}>
           <Icon path={icon} size={2} color={"#E9E9E9"}/>
         </span>
-      <p className={"title"}>{title}</p>
+      <span className={"title"}>{title}</span>
       <p className={"text"}>{text}</p>
     </motion.div>
   )
