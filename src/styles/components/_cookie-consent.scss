@@ -33,7 +33,7 @@
   }
 
   p {
-    z-index: 187003;
+    z-index: 187002;
 
     b {
       color: $primary;
@@ -58,6 +58,7 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
+    z-index: 187002;
 
     * {
       flex: 1 1 0;
