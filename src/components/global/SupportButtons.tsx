@@ -57,7 +57,7 @@ export const SupportButtons = ({headline}: { headline?: string }) => {
   return (
     <Section headline={headline}>
       <div className={"support-buttons"}>
-        <SupportButton index={0} service={"github"} href={socialLinks.github}>
+        <SupportButton index={0} service={"github"} href={socialLinks.github_issues}>
           <GitHubIcon size={48}/>
         </SupportButton>
 
