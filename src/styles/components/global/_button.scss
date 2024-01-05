@@ -35,6 +35,7 @@
 
     &:hover {
       background-color: bulmaDarken($beige, 5%);
+      text-shadow: 2px 2px $text-shadow-gray;
     }
 
     * {
@@ -47,6 +48,7 @@
 
     &:hover {
       background-color: bulmaDarken($danger, 10%);
+      text-shadow: 2px 2px $text-shadow-gray;
     }
   }
 
