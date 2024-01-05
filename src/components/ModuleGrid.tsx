@@ -15,7 +15,7 @@ interface ModuleGridColumnType {
 
 const ModuleGridColumn = ({label, icon, image, index}: ModuleGridColumnType) => {
   const [isEnabled, setEnabled] = useState(false)
-  const isMobile = useMediaQuery("(max-width: 768px)")
+    const isMobile = useMediaQuery("(max-width: 768px)")
 
   const variants = {
     hidden: {
@@ -49,7 +49,7 @@ const ModuleGridColumn = ({label, icon, image, index}: ModuleGridColumnType) => 
         }}
       >
         <div className="label" onClick={() => setEnabled(!isEnabled)}>
-          <span>{label}</span>
+          <p>{label}</p>
         </div>
         <div className={"icon-holder"}>
           {icon && <Icon path={icon} className={"icon"}/>}
