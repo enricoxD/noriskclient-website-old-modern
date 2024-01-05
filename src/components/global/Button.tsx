@@ -34,7 +34,7 @@ export const Button = (props: ButtonProps) => {
             onClick={invokeOnClick}
             {...attributes}
           >
-            <span>
+            <span style={{width: "100%"}}>
               {icon && <Icon path={icon} className={"icon"} size={0.75}/>}
               {children}
             </span>

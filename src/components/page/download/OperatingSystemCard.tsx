@@ -17,7 +17,7 @@ export const OperatingSystemCard = ({os, icon, subtitle, currentOs, handleClick}
         </div>
         <div className={"content-wrapper"}>
           <Icon className={"icon"} path={icon} size={6}/>
-          <p className={"os-name"}>{os}</p>
+          <span className={"os-name"}>{os}</span>
           <p className={"subtitle"}>{subtitle}</p>
         </div>
       </div>
